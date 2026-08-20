@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "dep93.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Grand Lac", "category": "Reservoir", "area_ha": 8.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.39921, 48.94744 ] } },
+{ "type": "Feature", "properties": { "name": "Station d'Épuration 1 de la Commune de Tremblay-en-France", "category": "Reservoir", "area_ha": 8.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.54103, 48.98543 ] } },
+{ "type": "Feature", "properties": { "name": "Bassin de Retenue de Villepinte", "category": "Reservoir", "area_ha": 5.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.51052, 48.95695 ] } }
+]
+}

@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+"name": "dep11.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "le Lac", "category": "Reservoir", "area_ha": 48.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.09128, 43.08223 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Arques", "category": "Lake", "area_ha": 6.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.37132, 42.94659 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Pradelles", "category": "Lake", "area_ha": 5.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.4424, 43.40305 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Galaube", "category": "Dam", "area_ha": 64.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.23042, 43.41237 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs du Paradis", "category": "Dam", "area_ha": 1.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.44358, 42.94509 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Reservoir", "area_ha": 6.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.76687, 43.18611 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Vène", "category": "Dam", "area_ha": 2.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.35403, 42.86991 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Cathala", "category": "Dam", "area_ha": 9.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.80872, 43.20371 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Cavayère", "category": "Dam", "area_ha": 19.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.41848, 43.18268 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Ganguise", "category": "Dam", "area_ha": 385.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.80966, 43.31534 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Cap de Porc", "category": "Reservoir", "area_ha": 9.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.13354, 43.24543 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Jouarres", "category": "Reservoir", "area_ha": 95.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.70183, 43.27252 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Corbières", "category": "Dam", "area_ha": 1.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.43807, 43.12937 ] } },
+{ "type": "Feature", "properties": { "name": "Bassin du Lampy Neuf", "category": "Dam", "area_ha": 23.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.17303, 43.40171 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Dam", "area_ha": 3.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.82689, 43.28664 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Laprade Basse", "category": "Dam", "area_ha": 96.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.27489, 43.41922 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Aiguilles", "category": "Dam", "area_ha": 22.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.76666, 43.249 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Régambert", "category": "Dam", "area_ha": 2.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.78847, 43.30189 ] } }
+]
+}

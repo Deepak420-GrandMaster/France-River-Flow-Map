@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.pdf binary
+*.zip binary
+
+# Keep generated map data out of language statistics and diffs.
+data/processed/** linguist-generated=true -diff
+*.geojson linguist-generated=true -diff

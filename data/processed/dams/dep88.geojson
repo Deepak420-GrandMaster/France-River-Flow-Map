@@ -1,0 +1,29 @@
+{
+"type": "FeatureCollection",
+"name": "dep88.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac de Retournemer", "category": "Lake", "area_ha": 5.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.98361, 48.0576 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de Bouzey", "category": "Dam", "area_ha": 115.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.35754, 48.15997 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Corbeaux", "category": "Lake", "area_ha": 8.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.90431, 47.9909 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Longemer", "category": "Lake", "area_ha": 74.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.95016, 48.07123 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Gérardmer", "category": "Lake", "area_ha": 114.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.85295, 48.06926 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Lande", "category": "Dam", "area_ha": 10.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.98094, 48.0325 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Arsondieux", "category": "Reservoir", "area_ha": 5.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.23238, 47.95133 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Falvinfoing", "category": "Reservoir", "area_ha": 5.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.2564, 47.97001 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Digue", "category": "Dam", "area_ha": 0.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.03637, 48.43967 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Blanchemer", "category": "Lake", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.97722, 48.01735 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs de la Folie", "category": "Reservoir", "area_ha": 10.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.88209, 48.19791 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Rochottes", "category": "Reservoir", "area_ha": 5.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.04154, 48.10709 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Breuillots", "category": "Reservoir", "area_ha": 13.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.24238, 47.94803 ] } },
+{ "type": "Feature", "properties": { "name": "Étangs Haumont", "category": "Reservoir", "area_ha": 15.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.9288, 48.29569 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Mottes", "category": "Reservoir", "area_ha": 9.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.43029, 48.03482 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Corbéfaing", "category": "Reservoir", "area_ha": 12.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.33882, 47.98647 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Cerisiers", "category": "Reservoir", "area_ha": 7.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.149, 48.02157 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Puthière", "category": "Reservoir", "area_ha": 11.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.21008, 48.12988 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Trémeures", "category": "Reservoir", "area_ha": 15.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.26737, 47.96396 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Plaine", "category": "Dam", "area_ha": 32.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.93437, 48.44691 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Lispach", "category": "Dam", "area_ha": 10.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.94372, 48.05365 ] } }
+]
+}

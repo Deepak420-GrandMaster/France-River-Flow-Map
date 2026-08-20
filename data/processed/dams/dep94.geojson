@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "dep94.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Plan d'Eau 1 de la Commune de Choisy-le-Roi", "category": "Reservoir", "area_ha": 6.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.42736, 48.77333 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau 3 de la Commune de Choisy-le-Roi", "category": "Reservoir", "area_ha": 5.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.42746, 48.76015 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau 1 de la Commune de Valenton", "category": "Reservoir", "area_ha": 6.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.46525, 48.75529 ] } },
+{ "type": "Feature", "properties": { "name": "Port de Bonneuil", "category": "Reservoir", "area_ha": 21.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.48686, 48.78168 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau 2 de la Commune de Choisy-le-Roi", "category": "Reservoir", "area_ha": 21.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.42863, 48.7629 ] } }
+]
+}

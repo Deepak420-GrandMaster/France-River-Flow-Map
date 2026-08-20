@@ -1,0 +1,22 @@
+{
+"type": "FeatureCollection",
+"name": "dep69.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac de la Forestière", "category": "Reservoir", "area_ha": 27.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.00612, 45.80597 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Boistray", "category": "Reservoir", "area_ha": 14.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.7291, 46.04144 ] } },
+{ "type": "Feature", "properties": { "name": "Déversoir d'Herbens", "category": "Reservoir", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.99615, 45.79716 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Sablons", "category": "Reservoir", "area_ha": 12.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.7434, 46.09611 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Eaux Bleues", "category": "Reservoir", "area_ha": 263.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.95132, 45.80551 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Parc de la Tête d'Or", "category": "Reservoir", "area_ha": 17.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.85358, 45.78056 ] } },
+{ "type": "Feature", "properties": { "name": "le Grand Large", "category": "Reservoir", "area_ha": 152.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.98355, 45.78612 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Sapins", "category": "Reservoir", "area_ha": 33.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.37203, 46.00746 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Bletta", "category": "Reservoir", "area_ha": 8.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.96347, 45.79904 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Allivoz", "category": "Reservoir", "area_ha": 25.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.97766, 45.79993 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Joux", "category": "Dam", "area_ha": 10.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.38663, 45.89219 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Thurins ou du Garon", "category": "Dam", "area_ha": 1.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.59235, 45.69758 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Dam", "area_ha": 5.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.44398, 45.66229 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Madone", "category": "Dam", "area_ha": 5.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.64718, 45.60785 ] } }
+]
+}

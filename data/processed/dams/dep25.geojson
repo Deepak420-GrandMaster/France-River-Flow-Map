@@ -1,0 +1,22 @@
+{
+"type": "FeatureCollection",
+"name": "dep25.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac de Malpas", "category": "Lake", "area_ha": 5.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.29417, 46.83438 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Lucien", "category": "Reservoir", "area_ha": 23.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.15847, 46.83974 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Frasne", "category": "Reservoir", "area_ha": 80.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.15194, 46.82638 ] } },
+{ "type": "Feature", "properties": { "name": "Gravière de Grau Temps", "category": "Reservoir", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.31998, 47.47798 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Mortes", "category": "Lake", "area_ha": 7.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.09791, 46.57763 ] } },
+{ "type": "Feature", "properties": { "name": "le Barchet", "category": "Reservoir", "area_ha": 32.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.4168, 47.0992 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Remoray", "category": "Lake", "area_ha": 99.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.26455, 46.77122 ] } },
+{ "type": "Feature", "properties": { "name": "l'Entonnoir", "category": "Lake", "area_ha": 91.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.20096, 46.82962 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Saint-Point", "category": "Lake", "area_ha": 431.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.31905, 46.81988 ] } },
+{ "type": "Feature", "properties": { "name": "Gravière de Dambenois", "category": "Reservoir", "area_ha": 16.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.86009, 47.53923 ] } },
+{ "type": "Feature", "properties": { "name": "Gravière de Mathay", "category": "Reservoir", "area_ha": 23.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.78743, 47.42477 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Pâquis", "category": "Reservoir", "area_ha": 19.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.85625, 47.53152 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Princes", "category": "Reservoir", "area_ha": 6.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.70021, 47.52683 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Chaillexon", "category": "Dam", "area_ha": 32.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.69393, 47.06856 ] } }
+]
+}

@@ -1,0 +1,32 @@
+{
+"type": "FeatureCollection",
+"name": "dep52.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Étang Chevalier", "category": "Dam", "area_ha": 205.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.79209, 48.54442 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Coutin", "category": "Reservoir", "area_ha": 6.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.91932, 48.58209 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Blanche Terre", "category": "Reservoir", "area_ha": 24.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.73697, 48.42095 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de Charmes", "category": "Dam", "area_ha": 161.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.36933, 47.91305 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau 1 du Bois de Saint-Rémi", "category": "Dam", "area_ha": 3.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.84532, 48.55652 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau 2 du Bois de Saint-Rémi", "category": "Dam", "area_ha": 1.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.84974, 48.55506 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de Vingeanne ou de Villegusien", "category": "Dam", "area_ha": 151.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.31303, 47.74657 ] } },
+{ "type": "Feature", "properties": { "name": "les Quarantes Sillons", "category": "Reservoir", "area_ha": 22.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.67152, 48.5062 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir des Leschères", "category": "Reservoir", "area_ha": 10.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.94742, 48.48603 ] } },
+{ "type": "Feature", "properties": { "name": "Grand Étang", "category": "Reservoir", "area_ha": 6.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.84151, 48.43587 ] } },
+{ "type": "Feature", "properties": { "name": "Grand Étang", "category": "Reservoir", "area_ha": 6.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.33549, 48.28375 ] } },
+{ "type": "Feature", "properties": { "name": "Étang le Jay", "category": "Reservoir", "area_ha": 6.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.85995, 48.52792 ] } },
+{ "type": "Feature", "properties": { "name": "Étang", "category": "Reservoir", "area_ha": 5.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.14925, 48.42633 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Boulaye", "category": "Reservoir", "area_ha": 13.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.85902, 48.48835 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Reservoir", "area_ha": 27.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.69835, 48.53315 ] } },
+{ "type": "Feature", "properties": { "name": "Grand Étang d'Annéville", "category": "Reservoir", "area_ha": 10.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.09788, 48.19836 ] } },
+{ "type": "Feature", "properties": { "name": "le Grand Étang", "category": "Reservoir", "area_ha": 27.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.93408, 48.59207 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Reservoir", "area_ha": 15.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.81274, 48.47675 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Morimond", "category": "Reservoir", "area_ha": 9.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.6779, 48.0578 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Reservoir", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.38379, 48.2062 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de la Liez ou de Lecey", "category": "Dam", "area_ha": 217.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.39606, 47.87036 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de la Mouche", "category": "Dam", "area_ha": 73.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.2605, 47.87307 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Chenil", "category": "Dam", "area_ha": 15.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.85055, 48.56153 ] } },
+{ "type": "Feature", "properties": { "name": "Bois de la Chausse", "category": "Dam", "area_ha": 16.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.85186, 48.56716 ] } }
+]
+}

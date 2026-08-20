@@ -1,0 +1,31 @@
+{
+"type": "FeatureCollection",
+"name": "dep66.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac des Bouillouses (la Bollosa)", "category": "Dam", "area_ha": 153.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.99918, 42.57075 ] } },
+{ "type": "Feature", "properties": { "name": "Estany Llat", "category": "Lake", "area_ha": 11.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.9686, 42.56274 ] } },
+{ "type": "Feature", "properties": { "name": "Estany de Lanòs ou Étang de Lanoux", "category": "Dam", "area_ha": 169.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.90352, 42.58869 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Vinça", "category": "Dam", "area_ha": 154.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.52634, 42.65161 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Puyvalador", "category": "Dam", "area_ha": 79.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.12651, 42.63932 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Matemale", "category": "Dam", "area_ha": 206.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.09852, 42.57006 ] } },
+{ "type": "Feature", "properties": { "name": "Estany Gros", "category": "Lake", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.00766, 42.62515 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue Touristique de Villeneuve de la Raho 1", "category": "Dam", "area_ha": 14.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.90506, 42.63868 ] } },
+{ "type": "Feature", "properties": { "name": "Estany Negre", "category": "Lake", "area_ha": 6.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.02118, 42.54798 ] } },
+{ "type": "Feature", "properties": { "name": "l'Estanyol", "category": "Lake", "area_ha": 5.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.94135, 42.59996 ] } },
+{ "type": "Feature", "properties": { "name": "Estany de Trebens", "category": "Lake", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.96127, 42.57671 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Caramany", "category": "Dam", "area_ha": 175.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.55135, 42.74845 ] } },
+{ "type": "Feature", "properties": { "name": "Estany de la Pradella", "category": "Lake", "area_ha": 10.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.01329, 42.54584 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Aude (Estany d'Auda)", "category": "Lake", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.02482, 42.56992 ] } },
+{ "type": "Feature", "properties": { "name": "Gorg Estelat", "category": "Lake", "area_ha": 5.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.21256, 42.64548 ] } },
+{ "type": "Feature", "properties": { "name": "Estany Llong", "category": "Lake", "area_ha": 6.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.96545, 42.56841 ] } },
+{ "type": "Feature", "properties": { "name": "Estany del Castellar", "category": "Lake", "area_ha": 6.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.9678, 42.57775 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Bouzigues", "category": "Reservoir", "area_ha": 8.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.75834, 42.6822 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de Sant Martí", "category": "Reservoir", "area_ha": 9.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.9572, 42.58021 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Conillac", "category": "Dam", "area_ha": 4.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.54259, 42.64901 ] } },
+{ "type": "Feature", "properties": { "name": "el Passet", "category": "Dam", "area_ha": 3.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.86779, 42.55276 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de les Escomes", "category": "Dam", "area_ha": 10.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.5345, 42.64731 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Villeneuve-de-la-Raho", "category": "Dam", "area_ha": 192.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.90253, 42.63068 ] } }
+]
+}

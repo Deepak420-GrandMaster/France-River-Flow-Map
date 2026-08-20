@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "dep48.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Retenue de Puylaurent", "category": "Dam", "area_ha": 54.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.87755, 44.52512 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de Naussac", "category": "Dam", "area_ha": 927.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.81288, 44.74699 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Charpal", "category": "Dam", "area_ha": 189.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.57473, 44.62577 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Villefort", "category": "Dam", "area_ha": 128.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.92571, 44.45783 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue du Rachas", "category": "Dam", "area_ha": 17.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.91904, 44.50609 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Planchamps Pied de Borne", "category": "Dam", "area_ha": 5.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.98737, 44.47404 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Born", "category": "Reservoir", "area_ha": 7.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.09989, 44.60807 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Barrandon", "category": "Reservoir", "area_ha": 7.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.61701, 44.45268 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Moulinet", "category": "Reservoir", "area_ha": 14.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.23282, 44.64223 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Salhiens", "category": "Reservoir", "area_ha": 6.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.06097, 44.64285 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Saint-Andéol", "category": "Reservoir", "area_ha": 13.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.08125, 44.61908 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de Booz", "category": "Dam", "area_ha": 10.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.20046, 44.45713 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Ganivet", "category": "Dam", "area_ha": 12.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.41117, 44.64741 ] } }
+]
+}

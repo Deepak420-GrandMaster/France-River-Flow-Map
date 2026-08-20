@@ -1,0 +1,15 @@
+# Runtime dependencies for Streamlit Community Cloud.
+# Lower bounds only: they are the versions the app was developed against, and
+# leaving the upper bound open lets Streamlit Cloud resolve security updates.
+streamlit>=1.40
+streamlit-folium>=0.24
+folium>=0.17
+pandas>=2.2
+requests>=2.32
+plotly>=5.24
+
+# Geospatial stack -- only scripts/prepare_rivers.py needs these. They are
+# kept here so a fresh clone can regenerate the map layers with one install.
+geopandas>=1.0
+pyogrio>=0.9
+shapely>=2.0

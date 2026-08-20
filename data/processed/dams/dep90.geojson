@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"name": "dep90.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Étang de la Vacherie", "category": "Reservoir", "area_ha": 5.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.04026, 47.56498 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Verchat", "category": "Reservoir", "area_ha": 10.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.02008, 47.54183 ] } },
+{ "type": "Feature", "properties": { "name": "Étangs des Soyeux", "category": "Reservoir", "area_ha": 6.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.81064, 47.70774 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Forges", "category": "Reservoir", "area_ha": 32.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.87288, 47.65339 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Malsaucy", "category": "Reservoir", "area_ha": 56.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.79504, 47.6875 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Ludwig", "category": "Reservoir", "area_ha": 9.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.81253, 47.69384 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Chenebier", "category": "Reservoir", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.7891, 47.68912 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Fourchu", "category": "Reservoir", "area_ha": 8.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.06142, 47.54162 ] } },
+{ "type": "Feature", "properties": { "name": "Étangs du Droz", "category": "Reservoir", "area_ha": 6.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.82241, 47.7107 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Neuf", "category": "Reservoir", "area_ha": 6.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.88858, 47.69729 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Marnière", "category": "Reservoir", "area_ha": 6.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.01369, 47.64216 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Hiver", "category": "Reservoir", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.8776, 47.70702 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Courbe Chaussée", "category": "Reservoir", "area_ha": 6.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.8168, 47.68984 ] } },
+{ "type": "Feature", "properties": { "name": "Étangs Gros Jacques", "category": "Reservoir", "area_ha": 13.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.7913, 47.69228 ] } },
+{ "type": "Feature", "properties": { "name": "Étangs des Combes", "category": "Reservoir", "area_ha": 5.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.81249, 47.71849 ] } },
+{ "type": "Feature", "properties": { "name": "l'Autruche", "category": "Reservoir", "area_ha": 8.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.91393, 47.682 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Seigneurie", "category": "Reservoir", "area_ha": 5.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.013, 47.73806 ] } },
+{ "type": "Feature", "properties": { "name": "Gros Étang", "category": "Reservoir", "area_ha": 14.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.05925, 47.55381 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Véronne", "category": "Reservoir", "area_ha": 34.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.81153, 47.68858 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Cratsch", "category": "Dam", "area_ha": 7.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.9829, 47.63397 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Banbois", "category": "Dam", "area_ha": 8.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.11072, 47.52928 ] } },
+{ "type": "Feature", "properties": { "name": "Étang au Comte", "category": "Dam", "area_ha": 5.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.03307, 47.57824 ] } }
+]
+}

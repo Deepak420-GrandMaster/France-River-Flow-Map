@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"name": "dep74.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac d'Annecy", "category": "Lake", "area_ha": 2675.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.1714, 45.84971 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Machilly", "category": "Reservoir", "area_ha": 7.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.32748, 46.25557 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Vogealle", "category": "Lake", "area_ha": 7.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.82609, 46.12052 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Gers", "category": "Lake", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.72935, 46.02683 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Passy", "category": "Lake", "area_ha": 16.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.65814, 45.92006 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Flérier", "category": "Lake", "area_ha": 15.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.57847, 46.10124 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Plagnes", "category": "Lake", "area_ha": 9.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.75188, 46.24554 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs Jovet", "category": "Lake", "area_ha": 7.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.73077, 45.75709 ] } },
+{ "type": "Feature", "properties": { "name": "Lac aux Blongios", "category": "Reservoir", "area_ha": 5.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.37386, 46.08354 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs des Îlettes", "category": "Reservoir", "area_ha": 10.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.63631, 45.96045 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs de la Cavettaz", "category": "Lake", "area_ha": 5.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.65849, 45.92286 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Cornu", "category": "Lake", "area_ha": 6.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.84898, 45.9581 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Dronières", "category": "Lake", "area_ha": 6.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.12265, 46.03921 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Lessy", "category": "Lake", "area_ha": 5.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.4381, 45.98752 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Môle", "category": "Lake", "area_ha": 9.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.42763, 46.13696 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Montriond", "category": "Lake", "area_ha": 28.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.72908, 46.20905 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Anterne", "category": "Lake", "area_ha": 11.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.79728, 45.99145 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Balme", "category": "Lake", "area_ha": 7.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.03324, 45.9672 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Vallon", "category": "Lake", "area_ha": 15.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.5597, 46.21555 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Beaumont", "category": "Reservoir", "area_ha": 13.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.96227, 45.81557 ] } },
+{ "type": "Feature", "properties": { "name": "Lac aux Castors", "category": "Reservoir", "area_ha": 6.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.3767, 46.08247 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Jotty", "category": "Dam", "area_ha": 12.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.61689, 46.29509 ] } }
+]
+}

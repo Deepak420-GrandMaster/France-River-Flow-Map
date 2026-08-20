@@ -1,0 +1,62 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ---- Environments ----
+.venv/
+venv/
+env/
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- Raw source data (never committed) ----
+# BD TOPAGE is ~1.3 GB. Re-download locally; see README.md > Preprocessing.
+data/raw/
+# Legacy pre-migration folder, literally named with a colon.
+data:raw/
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.gpkg
+*.parquet
+*.zip
+*.7z
+*.tar.gz
+
+# Intermediate and scratch artefacts
+data/interim/
+data/processed/_*.geojson
+*.geojson.tmp
+
+# Superseded single-department outputs from the pre-national layout
+data/processed/*.geojson
+!data/processed/regions.json
+
+# Local backup of the pre-refactor root scripts (superseded by scripts/)
+.archive_legacy/
+
+# ---- Committed on purpose ----
+# These processed layers are what the deployed app reads at runtime. They are
+# small by design (see README.md > Preprocessing):
+#   regions.json               registry of all 96 metropolitan departments
+#   boundaries/*.geojson       department outlines          (~0.8 MB total)
+#   rivers/*_overview.geojson  river networks               (~31 MB total)
+#   dams/*.geojson             dams and reservoirs          (~1.2 MB total)
+# Detail river layers are built on demand and are NOT committed by default;
+# remove the line below if you want to ship specific ones.
+data/processed/rivers/*_detail.geojson
+
+# Last-known-good API snapshots (runtime cache, machine-local)
+data/cache/

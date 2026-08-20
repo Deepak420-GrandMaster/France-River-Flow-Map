@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "dep26.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Gravière de Meyere", "category": "Reservoir", "area_ha": 8.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.69787, 44.5585 ] } },
+{ "type": "Feature", "properties": { "name": "Lac aux Truites", "category": "Reservoir", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.72048, 44.57929 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de Pignedoré", "category": "Reservoir", "area_ha": 17.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.67707, 44.36567 ] } },
+{ "type": "Feature", "properties": { "name": "Gravière de la Quarantaine", "category": "Reservoir", "area_ha": 7.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.77876, 44.671 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Bouvante", "category": "Reservoir", "area_ha": 13.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.26231, 44.93249 ] } },
+{ "type": "Feature", "properties": { "name": "l'Étang Saint-Louis", "category": "Reservoir", "area_ha": 19.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.83343, 44.32608 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Champos", "category": "Reservoir", "area_ha": 7.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.00715, 45.13331 ] } },
+{ "type": "Feature", "properties": { "name": "Réserve du Juanon", "category": "Reservoir", "area_ha": 9.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.01521, 44.82921 ] } }
+]
+}

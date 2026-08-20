@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+"name": "dep06.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lacs de Vens", "category": "Lake", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.93172, 44.31075 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Fous", "category": "Dam", "area_ha": 4.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.39708, 44.10238 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Casterino", "category": "Dam", "area_ha": 0.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.51993, 44.08229 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Nègre", "category": "Lake", "area_ha": 10.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.23593, 44.15873 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Broc", "category": "Lake", "area_ha": 30.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.18088, 43.81876 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Rabuons", "category": "Lake", "area_ha": 23.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.98241, 44.27005 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs de Vens", "category": "Reservoir", "area_ha": 11.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.93765, 44.31503 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Tanneron", "category": "Dam", "area_ha": 6.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.869, 43.60562 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Mesches", "category": "Dam", "area_ha": 7.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.52481, 44.07031 ] } },
+{ "type": "Feature", "properties": { "name": "le Lac Long", "category": "Dam", "area_ha": 17.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.39444, 44.11467 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de l'Agnel", "category": "Dam", "area_ha": 19.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.44112, 44.12196 ] } },
+{ "type": "Feature", "properties": { "name": "le Lac Noir", "category": "Dam", "area_ha": 11.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.44125, 44.10198 ] } },
+{ "type": "Feature", "properties": { "name": "le Lac Long Supérieur", "category": "Dam", "area_ha": 12.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.44997, 44.05875 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Fourca", "category": "Dam", "area_ha": 4.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.44943, 44.05523 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Muta", "category": "Dam", "area_ha": 7.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.44073, 44.05019 ] } },
+{ "type": "Feature", "properties": { "name": "le Lac Vert", "category": "Dam", "area_ha": 14.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.44383, 44.10745 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Basto", "category": "Dam", "area_ha": 23.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.43875, 44.09275 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Minière", "category": "Dam", "area_ha": 0.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.5095, 44.06868 ] } }
+]
+}

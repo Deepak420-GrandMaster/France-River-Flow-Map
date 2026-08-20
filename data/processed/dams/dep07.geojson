@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "dep07.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Dam", "area_ha": 36.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.96123, 44.55382 ] } },
+{ "type": "Feature", "properties": { "name": "Moulin de Peyron", "category": "Dam", "area_ha": 22.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.09826, 44.80012 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Dam", "area_ha": 39.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.10037, 44.77824 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Issarlès", "category": "Lake", "area_ha": 89.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.07055, 44.81786 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Vert", "category": "Reservoir", "area_ha": 6.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.74382, 45.21747 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Saint-Martial", "category": "Dam", "area_ha": 13.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.28009, 44.86685 ] } },
+{ "type": "Feature", "properties": { "name": "Lône des Goules", "category": "Dam", "area_ha": 2.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.84214, 45.04894 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Devesset", "category": "Dam", "area_ha": 46.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.38983, 45.05129 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Ternay", "category": "Dam", "area_ha": 23.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.6409, 45.30392 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Jointine", "category": "Dam", "area_ha": 6.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.70716, 45.10233 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue du Cheylard", "category": "Dam", "area_ha": 33.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.45673, 44.90992 ] } }
+]
+}

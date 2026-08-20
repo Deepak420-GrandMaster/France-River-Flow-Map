@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "dep46.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac du Tolerme", "category": "Dam", "area_ha": 33.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.04734, 44.82474 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Bannac", "category": "Reservoir", "area_ha": 18.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.88131, 44.37696 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau du Moulin du Mas", "category": "Dam", "area_ha": 5.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.13024, 44.56422 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de Saint-Sernin", "category": "Dam", "area_ha": 4.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.184, 44.34104 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Reservoir", "area_ha": 12.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.66692, 44.93006 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Guirande", "category": "Dam", "area_ha": 13.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.14364, 44.63005 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Barrage de Candes", "category": "Dam", "area_ha": 11.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.97926, 44.94864 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Vert", "category": "Dam", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.32594, 44.54885 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Vergnes", "category": "Dam", "area_ha": 1.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.97996, 44.94259 ] } }
+]
+}

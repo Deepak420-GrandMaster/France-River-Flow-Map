@@ -1,0 +1,22 @@
+# Light, professional theme. Kept deliberately close to the CartoDB positron
+# basemap so the map and the chrome around it read as one interface.
+[theme]
+base = "light"
+primaryColor = "#2c7fb8"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f5f7fa"
+textColor = "#1f2933"
+font = "sans serif"
+
+[server]
+# The app only reads public APIs and local GeoJSON; nothing is uploaded.
+maxUploadSize = 5
+enableStaticServing = false
+
+[browser]
+gatherUsageStats = false
+
+[client]
+# Never leak a Python traceback into the UI.
+showErrorDetails = "none"
+toolbarMode = "minimal"

@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "dep95.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "le Grand Vivier", "category": "Reservoir", "area_ha": 10.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.38319, 49.14401 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau 1 du Parc de Méry", "category": "Reservoir", "area_ha": 5.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.1828, 49.06893 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau du Moulin de Vallière", "category": "Reservoir", "area_ha": 15.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.93293, 49.12977 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Aunes", "category": "Reservoir", "area_ha": 9.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.99877, 49.08163 ] } },
+{ "type": "Feature", "properties": { "name": "Sablière 1 du Val Sud", "category": "Reservoir", "area_ha": 7.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.26269, 49.14389 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de la Commune de Beaumont-sur-Oise", "category": "Reservoir", "area_ha": 12.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.27728, 49.13611 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Enghien", "category": "Reservoir", "area_ha": 36.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.29949, 48.97168 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau du Château de Dampont", "category": "Dam", "area_ha": 1.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 1.97013, 49.1097 ] } }
+]
+}

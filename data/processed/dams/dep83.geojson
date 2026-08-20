@@ -1,0 +1,27 @@
+{
+"type": "FeatureCollection",
+"name": "dep83.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac de Méaulx", "category": "Dam", "area_ha": 13.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.63926, 43.56948 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de l'Avellan", "category": "Lake", "area_ha": 6.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.7917, 43.51285 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Saint-Cassien", "category": "Dam", "area_ha": 350.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.80558, 43.57983 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Pesquiers", "category": "Reservoir", "area_ha": 467.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.13531, 43.07456 ] } },
+{ "type": "Feature", "properties": { "name": "Étangs de Villepey", "category": "Reservoir", "area_ha": 63.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.72203, 43.40123 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de la Verne", "category": "Dam", "area_ha": 55.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.43012, 43.23243 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Sainte-Suzanne", "category": "Dam", "area_ha": 92.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.21083, 43.45304 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Trois Vallons", "category": "Dam", "area_ha": 2.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.82676, 43.52061 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de l'Endre", "category": "Lake", "area_ha": 6.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.58993, 43.49152 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue des Neuf Riaux", "category": "Dam", "area_ha": 0.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.43181, 43.33235 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Sainte-Croix", "category": "Dam", "area_ha": 2126.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.18728, 43.76836 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Lambert", "category": "Dam", "area_ha": 0.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.35485, 43.22559 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Rioutard", "category": "Dam", "area_ha": 4.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.68842, 43.5551 ] } },
+{ "type": "Feature", "properties": { "name": "Barrage du Peu", "category": "Dam", "area_ha": 0.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.29171, 43.18836 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Trapan", "category": "Dam", "area_ha": 24.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.29411, 43.14474 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Valescure", "category": "Dam", "area_ha": 0.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.34032, 43.24655 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Dardennes", "category": "Dam", "area_ha": 9.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.93158, 43.17715 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Gageai", "category": "Dam", "area_ha": 0.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.21928, 43.22158 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Escarcets", "category": "Dam", "area_ha": 7.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.4111, 43.34366 ] } }
+]
+}

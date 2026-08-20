@@ -1,0 +1,33 @@
+{
+"type": "FeatureCollection",
+"name": "dep54.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac de Pierre-Percée", "category": "Dam", "area_ha": 303.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.91784, 48.4674 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Fion", "category": "Reservoir", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.80183, 48.82429 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Parroy", "category": "Reservoir", "area_ha": 72.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.5853, 48.68783 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Romé", "category": "Reservoir", "area_ha": 70.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.80202, 48.78977 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Neuvron", "category": "Reservoir", "area_ha": 8.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.78132, 49.18779 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Grande Naue", "category": "Reservoir", "area_ha": 5.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.81677, 48.79664 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Villanaux", "category": "Reservoir", "area_ha": 5.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.90293, 48.76224 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Neuf Moulin", "category": "Reservoir", "area_ha": 13.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.81651, 48.77527 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Véry", "category": "Reservoir", "area_ha": 6.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.80195, 48.77605 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Brin", "category": "Reservoir", "area_ha": 11.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.33308, 48.76917 ] } },
+{ "type": "Feature", "properties": { "name": "Étang des Souches", "category": "Reservoir", "area_ha": 5.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.80766, 48.76829 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Falenzé", "category": "Reservoir", "area_ha": 15.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.53484, 48.50685 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Censal", "category": "Reservoir", "area_ha": 8.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.48512, 48.48656 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Reine", "category": "Reservoir", "area_ha": 8.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.50491, 48.51779 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Pannes", "category": "Reservoir", "area_ha": 18.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.76392, 48.91673 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Bellefontaine", "category": "Reservoir", "area_ha": 7.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.12733, 48.71637 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Bossupré", "category": "Reservoir", "area_ha": 8.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.59644, 48.66735 ] } },
+{ "type": "Feature", "properties": { "name": "Grand Étang", "category": "Reservoir", "area_ha": 22.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.802, 48.82865 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de Bausse", "category": "Reservoir", "area_ha": 8.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.79688, 48.79865 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Gresson", "category": "Reservoir", "area_ha": 19.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.91741, 48.5821 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Tauru", "category": "Reservoir", "area_ha": 10.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.28738, 48.67824 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Dame Pré", "category": "Reservoir", "area_ha": 9.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.77678, 48.76093 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de la Sangsue", "category": "Dam", "area_ha": 5.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.93134, 49.25234 ] } },
+{ "type": "Feature", "properties": { "name": "Réserve d'Eau de la Ville de Metz", "category": "Dam", "area_ha": 23.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.01724, 49.015 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de l'Othain", "category": "Dam", "area_ha": 26.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.46788, 49.46434 ] } }
+]
+}

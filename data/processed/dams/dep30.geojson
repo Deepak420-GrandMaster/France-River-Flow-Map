@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "dep30.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Étang du Roi", "category": "Reservoir", "area_ha": 18.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.20837, 43.52148 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Repausset Levant", "category": "Reservoir", "area_ha": 238.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.15406, 43.53747 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Salindres", "category": "Reservoir", "area_ha": 12.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.1445, 44.1668 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Roi", "category": "Reservoir", "area_ha": 131.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.22218, 43.51741 ] } },
+{ "type": "Feature", "properties": { "name": "l'Estagnol", "category": "Reservoir", "area_ha": 10.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.17328, 43.54979 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Ceyrac", "category": "Dam", "area_ha": 7.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.90421, 43.9155 ] } },
+{ "type": "Feature", "properties": { "name": "la Stribick", "category": "Reservoir", "area_ha": 7.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.15788, 43.49343 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau du Vidourle", "category": "Reservoir", "area_ha": 42.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.13641, 43.54711 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Capelle", "category": "Reservoir", "area_ha": 31.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.54576, 44.04422 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Pises", "category": "Dam", "area_ha": 10.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.50854, 44.04241 ] } },
+{ "type": "Feature", "properties": { "name": "les Boues Rouges", "category": "Dam", "area_ha": 41.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 4.16465, 44.20583 ] } }
+]
+}

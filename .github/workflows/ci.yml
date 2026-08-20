@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test on Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # The app targets 3.9+ syntax; these are the versions Streamlit
+        # Community Cloud offers.
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: python -m ruff check .
+
+      - name: Test
+        # The suite makes no network calls, so it is safe in CI.
+        run: python -m pytest -q
+
+      - name: Smoke-test the app imports and builds a map
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          from src.config import get_region
+          from src.utils.map_helpers import build_map
+          import src.data_loading  # noqa: F401  (import must not explode)
+
+          region = get_region("france")
+          assert region.rivers_path("overview").exists(), "national layer missing from the repo"
+          empty = pd.DataFrame(
+              columns=[
+                  "code_station", "libelle_station", "libelle_cours_eau",
+                  "latitude_station", "longitude_station", "flow_m3s",
+                  "flow_lps", "measured_at", "normal_ratio",
+              ]
+          )
+          html = build_map(region, empty).get_root().render()
+          assert "leaflet" in html.lower()
+          print(f"OK: rendered {len(html) // 1024} KB of map HTML")
+          PY
+
+  data-size:
+    name: Committed data stays deployable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check committed data size
+        run: |
+          # Measure *tracked* files only, so the result is identical locally
+          # and in CI regardless of gitignored build leftovers.
+          total_bytes=$(git ls-files -z data/processed \
+            | xargs -0 -r stat -c%s \
+            | awk '{s+=$1} END {print s+0}')
+          total_mb=$(( total_bytes / 1000000 ))
+          echo "committed data/processed = ${total_mb} MB"
+          # Streamlit Community Cloud clones the repo on every deploy, and
+          # GitHub warns above 50 MB per file. Keep the whole tree lean.
+          if [ "$total_mb" -gt 80 ]; then
+            echo "::error::committed data is ${total_mb} MB (limit 80 MB)"
+            exit 1
+          fi
+          echo "largest committed files:"
+          git ls-files -z data/processed | xargs -0 -r du -h | sort -rh | head -3

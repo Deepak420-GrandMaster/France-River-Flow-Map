@@ -1,0 +1,27 @@
+{
+"type": "FeatureCollection",
+"name": "dep05.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac de Puy Vachier", "category": "Lake", "area_ha": 5.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.27426, 45.02449 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Pavé", "category": "Lake", "area_ha": 8.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.32603, 44.98742 ] } },
+{ "type": "Feature", "properties": { "name": "Trois Lacs", "category": "Reservoir", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.1583, 44.46144 ] } },
+{ "type": "Feature", "properties": { "name": "Réserve Georges Serres", "category": "Reservoir", "area_ha": 10.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.12608, 44.60227 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs de Crupillouse", "category": "Lake", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.25097, 44.77139 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Glacier d'Arsine", "category": "Lake", "area_ha": 5.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.41436, 44.9704 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Mison-Upaix", "category": "Dam", "area_ha": 20.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.87198, 44.29278 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Goléon", "category": "Lake", "area_ha": 20.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.36058, 45.08784 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Serre-Ponçon", "category": "Dam", "area_ha": 2753.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.31913, 44.50372 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Faravel", "category": "Lake", "area_ha": 6.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.42033, 44.71664 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Égorgéou", "category": "Lake", "area_ha": 10.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.98005, 44.72098 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Pelleautier", "category": "Lake", "area_ha": 22.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.00761, 44.51943 ] } },
+{ "type": "Feature", "properties": { "name": "Lacs de Crupillouse", "category": "Lake", "area_ha": 6.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.24575, 44.77284 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Sainte-Anne", "category": "Lake", "area_ha": 8.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.81147, 44.61692 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de l'Eychauda", "category": "Lake", "area_ha": 15.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.47735, 44.9321 ] } },
+{ "type": "Feature", "properties": { "name": "Grand Lac des Estaris", "category": "Lake", "area_ha": 11.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.34402, 44.7328 ] } },
+{ "type": "Feature", "properties": { "name": "Réserve de Corréo", "category": "Dam", "area_ha": 6.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.99756, 44.55608 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau du Riou", "category": "Dam", "area_ha": 13.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.76818, 44.3658 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Peyssier", "category": "Dam", "area_ha": 10.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.86676, 44.44164 ] } }
+]
+}

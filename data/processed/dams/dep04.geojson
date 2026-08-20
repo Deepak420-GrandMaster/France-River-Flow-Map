@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"name": "dep04.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Lac d'Esparron", "category": "Dam", "area_ha": 318.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.96431, 43.72527 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Joël Siguret", "category": "Reservoir", "area_ha": 6.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.956, 44.02139 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Quinson", "category": "Dam", "area_ha": 143.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.08629, 43.72198 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Lauzanier", "category": "Lake", "area_ha": 5.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.8726, 44.37739 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Buissonnades", "category": "Reservoir", "area_ha": 9.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.88713, 43.8844 ] } },
+{ "type": "Feature", "properties": { "name": "Réserve des Poux", "category": "Dam", "area_ha": 0.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.96194, 44.24197 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Castillon", "category": "Dam", "area_ha": 504.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.53315, 43.91683 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Neuf Couleurs", "category": "Lake", "area_ha": 10.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.86328, 44.53939 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau des Vannades", "category": "Dam", "area_ha": 10.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.83843, 43.82992 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Sagnes", "category": "Lake", "area_ha": 19.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.83317, 44.38364 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Sagnes", "category": "Reservoir", "area_ha": 6.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.53547, 44.09033 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Allos", "category": "Lake", "area_ha": 43.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.70769, 44.23363 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de derrière la Croix", "category": "Lake", "area_ha": 5.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.87687, 44.3652 ] } },
+{ "type": "Feature", "properties": { "name": "les Eaux Tortes", "category": "Reservoir", "area_ha": 5.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.5118, 44.30147 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Artignosc", "category": "Dam", "area_ha": 27.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.08628, 43.72184 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de la Laye", "category": "Dam", "area_ha": 26.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.74518, 43.95039 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Chaudanne", "category": "Dam", "area_ha": 65.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.5555, 43.86174 ] } },
+{ "type": "Feature", "properties": { "name": "Baie d'Angles", "category": "Dam", "area_ha": 5.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.5355, 43.93712 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Forestière", "category": "Dam", "area_ha": 8.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 5.82451, 43.8125 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de la Saulce ou de Curbans", "category": "Dam", "area_ha": 56.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.02525, 44.42732 ] } },
+{ "type": "Feature", "properties": { "name": "Petit Lac", "category": "Dam", "area_ha": 4.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.22373, 43.8214 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de l'Escale", "category": "Dam", "area_ha": 85.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.02202, 44.09499 ] } }
+]
+}

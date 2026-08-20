@@ -1,0 +1,27 @@
+{
+"type": "FeatureCollection",
+"name": "dep68.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Beneleweiher", "category": "Reservoir", "area_ha": 9.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.1004, 47.593 ] } },
+{ "type": "Feature", "properties": { "name": "Nieder Weiher", "category": "Reservoir", "area_ha": 11.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.31077, 47.63256 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Noir", "category": "Lake", "area_ha": 10.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.09691, 48.1131 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Blanc", "category": "Lake", "area_ha": 27.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.09077, 48.12707 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Alfeld", "category": "Lake", "area_ha": 7.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.87152, 47.81718 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Ballon", "category": "Dam", "area_ha": 8.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.09543, 47.91263 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Vert", "category": "Lake", "area_ha": 7.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.06423, 48.08855 ] } },
+{ "type": "Feature", "properties": { "name": "Étangs de Gerschwiller", "category": "Reservoir", "area_ha": 9.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.15426, 47.51339 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de Cernay", "category": "Reservoir", "area_ha": 9.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.18892, 47.7809 ] } },
+{ "type": "Feature", "properties": { "name": "Gerteis", "category": "Reservoir", "area_ha": 22.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.33168, 47.86194 ] } },
+{ "type": "Feature", "properties": { "name": "Oberweiher", "category": "Reservoir", "area_ha": 12.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.19059, 47.63332 ] } },
+{ "type": "Feature", "properties": { "name": "Étang Moyen", "category": "Reservoir", "area_ha": 5.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.18132, 47.57367 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue du Michelbach", "category": "Dam", "area_ha": 80.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.12398, 47.75669 ] } },
+{ "type": "Feature", "properties": { "name": "Grand Neuweiher", "category": "Dam", "area_ha": 3.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.90704, 47.83328 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Schiessrothried", "category": "Dam", "area_ha": 5.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.02511, 48.03 ] } },
+{ "type": "Feature", "properties": { "name": "le Plan d'Eau", "category": "Dam", "area_ha": 16.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.20616, 47.47261 ] } },
+{ "type": "Feature", "properties": { "name": "Lac d'Altenweiher", "category": "Dam", "area_ha": 7.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.99447, 48.01232 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Lauch", "category": "Dam", "area_ha": 8.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.04282, 47.9355 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Kruth-Wildenstein", "category": "Dam", "area_ha": 76.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 6.95704, 47.95558 ] } }
+]
+}

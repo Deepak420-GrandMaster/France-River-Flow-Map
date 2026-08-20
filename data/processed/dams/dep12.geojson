@@ -1,0 +1,33 @@
+{
+"type": "FeatureCollection",
+"name": "dep12.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Barrage de Couesques", "category": "Dam", "area_ha": 214.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.6305, 44.72874 ] } },
+{ "type": "Feature", "properties": { "name": "Barrage de Castelnau-Lassouts", "category": "Dam", "area_ha": 222.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.92154, 44.49051 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue de Labarthe", "category": "Dam", "area_ha": 34.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.7183, 44.818 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Villefranche-de-Panat", "category": "Dam", "area_ha": 168.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.69563, 44.10673 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de Montézic", "category": "Dam", "area_ha": 212.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.6603, 44.72288 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Golinhac", "category": "Dam", "area_ha": 49.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.65596, 44.56493 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Selves", "category": "Dam", "area_ha": 108.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.68272, 44.66061 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Bages", "category": "Dam", "area_ha": 46.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.72536, 44.26151 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Pont-de-Salars", "category": "Dam", "area_ha": 166.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.74268, 44.29608 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Maury", "category": "Dam", "area_ha": 41.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.67863, 44.66951 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Dam", "area_ha": 1.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.52656, 44.16029 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Pareloup", "category": "Dam", "area_ha": 1191.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.73518, 44.20543 ] } },
+{ "type": "Feature", "properties": { "name": "Barrage de Pinet", "category": "Dam", "area_ha": 44.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.82141, 44.06749 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Reservoir", "area_ha": 7.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.34217, 44.16265 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Reservoir", "area_ha": 8.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.20045, 44.41867 ] } },
+{ "type": "Feature", "properties": { "name": "l'Étang", "category": "Reservoir", "area_ha": 19.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.29778, 44.4487 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau du Val de Lenne", "category": "Dam", "area_ha": 15.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.43964, 44.28409 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Barrage des Galens", "category": "Dam", "area_ha": 33.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.76233, 44.66214 ] } },
+{ "type": "Feature", "properties": { "name": "Réservoir de Saint-Amans", "category": "Dam", "area_ha": 10.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.75445, 44.071 ] } },
+{ "type": "Feature", "properties": { "name": "Lac des Moines", "category": "Dam", "area_ha": 23.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.0098, 44.61819 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Dam", "area_ha": 5.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.76114, 44.79644 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Gourde", "category": "Dam", "area_ha": 11.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.71482, 44.22127 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Brienne", "category": "Dam", "area_ha": 10.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.54254, 44.30216 ] } },
+{ "type": "Feature", "properties": { "name": "Unnamed", "category": "Dam", "area_ha": 6.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.7037, 44.75882 ] } },
+{ "type": "Feature", "properties": { "name": "Retenue du Petit Selvet", "category": "Dam", "area_ha": 13.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.84982, 44.73591 ] } }
+]
+}

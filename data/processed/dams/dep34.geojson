@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "dep34.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Réservoir d'Avène", "category": "Dam", "area_ha": 157.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.0867, 43.78402 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Raviège", "category": "Dam", "area_ha": 381.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.6717, 43.60158 ] } },
+{ "type": "Feature", "properties": { "name": "Lac du Salagou", "category": "Dam", "area_ha": 707.6, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.38343, 43.65577 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de la Mourre", "category": "Lake", "area_ha": 9.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.9577, 43.60707 ] } },
+{ "type": "Feature", "properties": { "name": "les Salins", "category": "Reservoir", "area_ha": 7.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.8282, 43.50854 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Peyrade", "category": "Reservoir", "area_ha": 35.1, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.74046, 43.42513 ] } },
+{ "type": "Feature", "properties": { "name": "les Salins", "category": "Reservoir", "area_ha": 44.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.82723, 43.51328 ] } },
+{ "type": "Feature", "properties": { "name": "les Salins", "category": "Reservoir", "area_ha": 31.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.96171, 43.56654 ] } },
+{ "type": "Feature", "properties": { "name": "l'Estagnol", "category": "Reservoir", "area_ha": 68.5, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.83914, 43.53554 ] } },
+{ "type": "Feature", "properties": { "name": "Étang de la Castillone", "category": "Reservoir", "area_ha": 8.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.97706, 43.57791 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Cécélés", "category": "Dam", "area_ha": 6.3, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.8895, 43.76442 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Vezoles", "category": "Dam", "area_ha": 50.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 2.79697, 43.56026 ] } },
+{ "type": "Feature", "properties": { "name": "Lac de Jeantou", "category": "Dam", "area_ha": 0.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 3.87014, 43.77891 ] } }
+]
+}

@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "dep67.geojson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-05,
+"features": [
+{ "type": "Feature", "properties": { "name": "Bassin Adrien Weirich", "category": "Reservoir", "area_ha": 14.0, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.78927, 48.53326 ] } },
+{ "type": "Feature", "properties": { "name": "Bassin Gaston Haelling", "category": "Reservoir", "area_ha": 7.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.794, 48.54086 ] } },
+{ "type": "Feature", "properties": { "name": "Bassin Auguste Detœuf", "category": "Reservoir", "area_ha": 7.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.79601, 48.54687 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de Plobsheim", "category": "Reservoir", "area_ha": 649.9, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.75576, 48.45668 ] } },
+{ "type": "Feature", "properties": { "name": "Grosshammerweier", "category": "Reservoir", "area_ha": 6.7, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.30453, 48.8115 ] } },
+{ "type": "Feature", "properties": { "name": "Lac Achard", "category": "Reservoir", "area_ha": 17.8, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.69719, 48.52999 ] } },
+{ "type": "Feature", "properties": { "name": "Plan d'Eau de Wolfartshoffen", "category": "Dam", "area_ha": 16.4, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.67897, 48.95035 ] } },
+{ "type": "Feature", "properties": { "name": "Étang du Fleckenstein", "category": "Dam", "area_ha": 5.2, "altitude_m": null }, "geometry": { "type": "Point", "coordinates": [ 7.76738, 49.03534 ] } }
+]
+}
