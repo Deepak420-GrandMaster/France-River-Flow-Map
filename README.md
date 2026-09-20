@@ -89,9 +89,32 @@ python scripts/capture_screenshots.py
 | [Hub'Eau Hydrométrie API v2](https://hubeau.eaufrance.fr/page/api-hydrometrie) | Stations, real-time discharge, monthly normals | Open, free, no key |
 | [BD TOPAGE 2024](https://www.sandre.eaufrance.fr/) (IGN / OFB) | River network, dams, reservoirs | Open data |
 | [france-geojson](https://github.com/gregoiredavid/france-geojson) | Department boundaries | Open data |
-| OpenStreetMap / CARTO (`CartoDB positron`) | Basemap tiles | Open, free tier |
+| [Esri Light Gray Canvas](https://www.arcgis.com/home/item.html?id=979c6cc89af9449cbeb5342a439c6a76) | Basemap tiles | Free, no key |
 
-In-app attribution: **Sources: Hub'Eau Hydrométrie, BD TOPAGE, OpenStreetMap/CARTO**
+In-app attribution: **Sources: Hub'Eau Hydrométrie, BD TOPAGE, Esri Light Gray Canvas**
+
+### Basemap
+
+CARTO now requires an API key for its raster basemaps. The keyless endpoints
+still return tiles, but each one arrives stamped **API KEY REQUIRED**, so the
+watermark tiled itself across the map. The basemap is therefore Esri's Light
+Gray Canvas, which needs no key or sign-up and is close enough to Positron
+that the app's theme still reads as one interface. Its raster tiles stop at
+zoom 16; past that Leaflet upscales the last native level rather than showing
+blanks, and the app never auto-zooms beyond 15.
+
+To go back to Positron, get a key from
+[carto.com/basemaps](https://carto.com/basemaps/) and set `CARTO_API_KEY` --
+as an environment variable locally, or in **Settings -> Secrets** on Streamlit
+Community Cloud:
+
+```toml
+# .streamlit/secrets.toml  (gitignored)
+CARTO_API_KEY = "your-key"
+```
+
+The tiles, their attribution and the in-app source line all follow from that
+one variable; nothing else needs changing.
 
 ### Units — important
 

@@ -1,4 +1,4 @@
-# Light, professional theme. Kept deliberately close to the CartoDB positron
+# Light, professional theme. Kept deliberately close to the light-gray canvas
 # basemap so the map and the chrome around it read as one interface.
 [theme]
 base = "light"
