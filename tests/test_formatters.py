@@ -23,6 +23,7 @@ from src.config import (
 from src.rivers import count_features, load_river_geojson, river_style
 from src.utils.formatters import (
     add_freshness_column,
+    format_commune,
     format_coordinates,
     format_flow,
     format_litres,
@@ -54,6 +55,39 @@ def test_missing_flow_gets_the_no_data_colour():
 )
 def test_flow_formatting_prioritises_m3s(flow, expected):
     assert format_flow(flow) == expected
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        ("AGDE", "Agde"),
+        ("FRAISSE-SUR-AGOUT", "Fraisse-sur-Agout"),
+        ("SAINT-GUILHEM-LE-DESERT", "Saint-Guilhem-le-Desert"),
+        ("PLOURIN-LES-MORLAIX", "Plourin-les-Morlaix"),
+        ("CLERMONT-L'HERAULT", "Clermont-l'Herault"),
+        # A particle only stays lowercase inside the name, never as its head.
+        ("LES MATELLES", "Les Matelles"),
+        ("L'ISLE-JOURDAIN", "L'Isle-Jourdain"),
+        ("PONT-AVEN", "Pont-Aven"),
+    ],
+)
+def test_commune_names_are_cased_as_french_place_names(raw, expected):
+    assert format_commune(raw) == expected
+
+
+def test_commune_formatting_invents_no_accents():
+    """Hub'Eau publishes these unaccented. Guessing "Béziers" from "BEZIERS"
+    would be inventing detail the source never provided -- and the guess is
+    wrong often enough (Vedas/Védas, Menez/Ménez) to matter."""
+    assert format_commune("BEZIERS") == "Beziers"
+    assert format_commune("SAINT-JEAN-DE-VEDAS") == "Saint-Jean-de-Vedas"
+
+
+def test_commune_formatting_handles_missing_values():
+    assert format_commune(None) == ""
+    assert format_commune("") == ""
+    assert format_commune("   ") == ""
+    assert format_commune(float("nan")) == ""
 
 
 def test_timestamp_formatting_handles_missing_values():

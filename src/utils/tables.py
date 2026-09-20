@@ -26,8 +26,9 @@ def table_columns(lang: str = DEFAULT_LANGUAGE) -> list[str]:
 def apply_filters(stations: pd.DataFrame, controls: dict) -> pd.DataFrame:
     """Filter the station table according to the sidebar state.
 
-    ``controls`` keys: ``only_with_flow`` (bool), ``search`` (str),
-    ``flow_range`` (``(low, high)`` in m³/s, or ``None``).
+    ``controls`` keys: ``only_with_flow`` (bool), ``cities`` (list of raw
+    ``libelle_commune`` values), ``search`` (str), ``flow_range``
+    (``(low, high)`` in m³/s, or ``None``).
     """
     if stations.empty:
         return stations
@@ -35,6 +36,13 @@ def apply_filters(stations: pd.DataFrame, controls: dict) -> pd.DataFrame:
 
     if controls.get("only_with_flow"):
         filtered = filtered[filtered["flow_m3s"].notna()]
+
+    cities = controls.get("cities") or []
+    # The column is absent from station snapshots written before the commune
+    # field was requested, and those stay readable for 48 hours. An empty
+    # selection is "all cities", so only a real selection can filter.
+    if cities and "libelle_commune" in filtered.columns:
+        filtered = filtered[filtered["libelle_commune"].isin(cities)]
 
     search = (controls.get("search") or "").strip()
     if search:

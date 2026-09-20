@@ -14,6 +14,9 @@ STATIONS = pd.DataFrame(
         ],
         "libelle_cours_eau": ["L'Orb", "L'Hérault", "Le Lez", "La Mosson"],
         "code_station": ["Y2580", "Y2100", "Y3204", "Y3315"],
+        # Stored exactly as Hub'Eau publishes it: shouted. Filtering matches
+        # these raw values; only the sidebar labels are cased for display.
+        "libelle_commune": ["BEZIERS", "GANGES", "MONTPELLIER", "JUVIGNAC"],
         "flow_m3s": [3.13, 1.65, None, 0.02],
         "measured_at": [
             pd.Timestamp("2026-08-20T10:10:00Z"), pd.Timestamp("2026-08-20T10:00:00Z"),
@@ -33,6 +36,36 @@ def test_no_filters_keeps_everything():
 def test_only_with_flow_drops_stations_without_a_reading():
     result = apply_filters(STATIONS, {**NO_FILTERS, "only_with_flow": True})
     assert list(result["code_station"]) == ["Y2580", "Y2100", "Y3315"]
+
+
+def test_city_filter_keeps_only_the_selected_communes():
+    result = apply_filters(STATIONS, {**NO_FILTERS, "cities": ["MONTPELLIER", "GANGES"]})
+    assert sorted(result["code_station"]) == ["Y2100", "Y3204"]
+
+
+def test_empty_city_selection_means_every_city():
+    """The multiselect starts empty, and empty must not mean "no stations"."""
+    assert len(apply_filters(STATIONS, {**NO_FILTERS, "cities": []})) == 4
+
+
+def test_city_filter_is_skipped_when_the_column_is_absent():
+    """Station snapshots written before the commune field was requested stay
+    readable for 48 hours, and have no libelle_commune column at all.
+
+    Dropping every row there would look like an outage rather than a stale
+    cache, so an unfilterable frame is left alone.
+    """
+    legacy = STATIONS.drop(columns=["libelle_commune"])
+    assert len(apply_filters(legacy, {**NO_FILTERS, "cities": ["MONTPELLIER"]})) == 4
+
+
+def test_city_filter_combines_with_the_other_filters():
+    result = apply_filters(
+        STATIONS,
+        {**NO_FILTERS, "cities": ["MONTPELLIER", "BEZIERS"], "only_with_flow": True},
+    )
+    # Le Lez à Montpellier has no reading, so only Béziers survives both.
+    assert list(result["code_station"]) == ["Y2580"]
 
 
 def test_search_matches_station_river_and_code_case_insensitively():

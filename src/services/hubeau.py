@@ -190,6 +190,7 @@ STATION_FIELDS = (
     "libelle_cours_eau",
     "latitude_station",
     "longitude_station",
+    "libelle_commune",
     "libelle_departement",
     "en_service",
 )
