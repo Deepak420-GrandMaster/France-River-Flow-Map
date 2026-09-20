@@ -106,6 +106,18 @@ STRINGS: dict[str, dict[str, str]] = {
         "en": "Hides stations with no discharge published in the last {hours} hours.",
         "fr": "Masque les stations sans débit publié depuis {hours} heures.",
     },
+    "side.cities": {"en": "City", "fr": "Commune"},
+    "side.cities_placeholder": {"en": "All cities", "fr": "Toutes les communes"},
+    "side.cities_help": {
+        "en": "Keeps only the stations sited in the chosen communes. "
+              "Leave it empty to keep every city.",
+        "fr": "Ne garde que les stations situées dans les communes choisies. "
+              "Laisser vide pour toutes les communes.",
+    },
+    "side.cities_unavailable": {
+        "en": "City filter unavailable: no stations loaded.",
+        "fr": "Filtre par commune indisponible : aucune station chargée.",
+    },
     "side.search": {"en": "River, station or code", "fr": "Cours d'eau, station ou code"},
     "side.range": {"en": "Discharge range (m³/s)", "fr": "Plage de débit (m³/s)"},
     "side.range_help": {

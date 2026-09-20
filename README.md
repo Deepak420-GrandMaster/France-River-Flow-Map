@@ -66,6 +66,7 @@ python scripts/capture_screenshots.py
   discharge history (24 hours or 7 days) with the seasonal normal marked.
 - Filtered, sortable station table with CSV download, plus a top-10 discharge chart.
 - Search across station name, river name and station code.
+- Filter by city (commune) — multi-select, resets when the department changes.
 
 **Interface**
 - **English / French** switch in the top right, covering every string in the UI

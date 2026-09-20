@@ -5,6 +5,7 @@ Kept free of Streamlit and Folium imports so they are trivially testable.
 
 from __future__ import annotations
 
+import re
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -29,6 +30,47 @@ FRESHNESS_KEYS = {
 def freshness_label(state: str, lang: str = DEFAULT_LANGUAGE) -> str:
     """Display text for a freshness code."""
     return t(FRESHNESS_KEYS.get(state, "fresh.unavailable"), lang)
+
+
+#: Words that stay lowercase inside a French place name -- "Saint-Guilhem-le-
+#: Désert", "Plourin-les-Morlaix", "Clermont-l'Hérault". Never applied to the
+#: first word, so "Les Matelles" and "L'Isle-Jourdain" keep their capital.
+COMMUNE_PARTICLES = frozenset(
+    {"au", "aux", "d", "de", "des", "du", "en", "et", "l", "la", "le", "les",
+     "lès", "sous", "sur"}
+)
+
+#: Split on spaces, hyphens and apostrophes while keeping the separators, so
+#: the name can be rebuilt exactly as it was punctuated.
+_COMMUNE_SPLIT = re.compile(r"([ \-'\u2019])")
+
+
+def format_commune(name: str | None) -> str:
+    """Case a commune name the way French place names are written.
+
+    Hub'Eau publishes them shouted -- ``SAINT-GUILHEM-LE-DESERT`` -- which
+    reads badly beside the properly cased station labels it sits next to. The
+    source is also unaccented, and accents are **not** invented here: only the
+    casing is fixed, so the result stays faithful to what the API published.
+    """
+    if name is None or (not isinstance(name, str) and pd.isna(name)):
+        return ""
+    text = str(name).strip()
+    if not text:
+        return ""
+
+    out: list[str] = []
+    first = True
+    for part in _COMMUNE_SPLIT.split(text):
+        if not part:
+            continue
+        if _COMMUNE_SPLIT.fullmatch(part):
+            out.append(part)
+            continue
+        lowered = part.casefold()
+        out.append(lowered if not first and lowered in COMMUNE_PARTICLES else lowered.capitalize())
+        first = False
+    return "".join(out)
 
 
 def format_flow(flow_m3s: float | None, lang: str = DEFAULT_LANGUAGE) -> str:

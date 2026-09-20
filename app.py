@@ -60,6 +60,7 @@ from src.services.hubeau import empty_stations as hubeau_empty
 from src.utils import theme
 from src.utils.formatters import (
     add_freshness_column,
+    format_commune,
     format_coordinates,
     format_flow,
     format_litres,
@@ -182,6 +183,9 @@ def render_sidebar(lang: str) -> dict:
             help=t("side.only_recent_help", lang, hours=DEFAULT_LOOKBACK_HOURS),
             key="ctl_only_recent",
         )
+        # Filled by render_live_sidebar_parts: the commune list is whatever
+        # the loaded stations sit in, which is not known until Hub'Eau answers.
+        city_slot = st.empty()
         search = st.text_input(
             "search", placeholder=t("side.search", lang), label_visibility="collapsed",
             key="ctl_search",
@@ -210,8 +214,10 @@ def render_sidebar(lang: str) -> dict:
         "animate": animate,
         "flow_speed": flow_speed,
         "only_with_flow": only_with_flow,
+        "cities": [],
         "search": search.strip(),
         "flow_range": None,
+        "_city_slot": city_slot,
         "_slider_slot": slider_slot,
         "_status_slot": status_slot,
     }
@@ -269,6 +275,31 @@ def render_live_sidebar_parts(controls: dict, stations: pd.DataFrame, fetched_at
     controls["_status_slot"].caption(
         t("side.updated", lang, age=relative_age(fetched_at, lang), stamp=utc_label(fetched_at))
     )
+
+    communes = (
+        stations["libelle_commune"].dropna().astype(str).str.strip()
+        if "libelle_commune" in stations
+        else pd.Series(dtype=str)
+    )
+    # Sorted by the displayed spelling rather than the shouted source value,
+    # so the list reads alphabetically as the user actually sees it.
+    city_options = sorted({name for name in communes if name}, key=format_commune)
+    with controls["_city_slot"].container():
+        if city_options:
+            controls["cities"] = st.multiselect(
+                t("side.cities", lang),
+                options=city_options,
+                format_func=format_commune,
+                placeholder=t("side.cities_placeholder", lang),
+                help=t("side.cities_help", lang),
+                label_visibility="collapsed",
+                # Keyed on the department: the commune list changes completely
+                # from one to the next, and a selection carried over would
+                # match nothing and silently empty the map.
+                key=f"ctl_cities_{controls['region_key']}",
+            )
+        else:
+            st.caption(t("side.cities_unavailable", lang))
 
     measured = stations["flow_m3s"].dropna() if "flow_m3s" in stations else pd.Series(dtype=float)
     with controls["_slider_slot"].container():
