@@ -7,6 +7,7 @@ the preprocessing scripts never disagree about a constant.
 from __future__ import annotations
 
 import json
+import os
 import re
 from dataclasses import dataclass
 from functools import lru_cache
@@ -230,7 +231,40 @@ FRESHNESS_UNAVAILABLE = "Unavailable"
 # --------------------------------------------------------------------------
 # Cartography
 # --------------------------------------------------------------------------
-BASEMAP_TILES = "CartoDB positron"  # light, professional, no API key
+# Basemap. CARTO began requiring an API key for its raster basemaps: the
+# keyless endpoints still answer 200, but every tile comes back stamped
+# "API KEY REQUIRED", which is exactly what used to print across the map. The
+# default is therefore Esri's Light Gray Canvas -- no key, no sign-up, and
+# close enough to Positron that the rest of the theme still reads as one
+# interface. Set CARTO_API_KEY in the environment (or in Streamlit secrets,
+# which Streamlit Cloud also exports to the environment) to go back to
+# Positron.
+CARTO_API_KEY = os.environ.get("CARTO_API_KEY", "").strip()
+
+#: Esri serves the canvas as two layers where CARTO bakes both into one tile:
+#: ``Base`` is the ground, ``Reference`` the transparent place names.
+_ESRI_CANVAS = (
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/"
+    "World_Light_Gray_{layer}/MapServer/tile/{{z}}/{{y}}/{{x}}"
+)
+
+if CARTO_API_KEY:
+    BASEMAP_TILES = (
+        f"https://basemaps.cartocdn.com/light_all/{{z}}/{{x}}/{{y}}.png?api_key={CARTO_API_KEY}"
+    )
+    BASEMAP_LABELS_TILES = None
+    BASEMAP_ATTR = "&copy; OpenStreetMap contributors &copy; CARTO"
+    BASEMAP_MAX_NATIVE_ZOOM = 20
+    BASEMAP_SOURCE = "OpenStreetMap/CARTO"
+else:
+    BASEMAP_TILES = _ESRI_CANVAS.format(layer="Base")
+    BASEMAP_LABELS_TILES = _ESRI_CANVAS.format(layer="Reference")
+    BASEMAP_ATTR = "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ"
+    #: Esri's raster canvas has no tiles past z16. Leaflet upscales the last
+    #: native level rather than showing blanks, and the app itself never
+    #: auto-zooms beyond 15 (see ``map_helpers.MAX_ZOOM``).
+    BASEMAP_MAX_NATIVE_ZOOM = 16
+    BASEMAP_SOURCE = "Esri Light Gray Canvas"
 
 #: Rivers are drawn as two stacked strokes: a soft static base plus an
 #: animated dashed overlay that reads as flowing water on a light basemap.
@@ -275,7 +309,9 @@ NORMAL_CLASSES: list[tuple[float | None, str, str]] = [
 NORMAL_UNKNOWN_COLOR = "#c8ccd1"
 NORMAL_UNKNOWN_LABEL = "No reference data"
 
-ATTRIBUTION = "Sources: Hub'Eau Hydrométrie, BD TOPAGE, OpenStreetMap/CARTO"
+#: Plain text, shown in the app chrome and escaped before display. The
+#: HTML attribution Leaflet paints inside the map is ``BASEMAP_ATTR``.
+ATTRIBUTION = f"Sources: Hub'Eau Hydrométrie, BD TOPAGE, {BASEMAP_SOURCE}"
 
 
 def flow_color(flow_m3s: float | None) -> str:

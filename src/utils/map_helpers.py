@@ -17,6 +17,9 @@ from folium.plugins import MarkerCluster
 
 from src.config import (
     ATTRIBUTION,
+    BASEMAP_ATTR,
+    BASEMAP_LABELS_TILES,
+    BASEMAP_MAX_NATIVE_ZOOM,
     BASEMAP_TILES,
     DAM_COLOR,
     FLOW_SPEED_DEFAULT,
@@ -447,7 +450,10 @@ def build_map(
     river_map = folium.Map(
         location=center,
         zoom_start=zoom,
-        tiles=BASEMAP_TILES,
+        # The basemap is added below rather than here: folium's own ``tiles``
+        # argument gives no way to set max_native_zoom, and the labels need a
+        # second layer of their own.
+        tiles=None,
         control_scale=True,
         # Canvas is the map default: it draws the ~900 static river paths far
         # faster than SVG when panning. Only the small animated subset opts
@@ -458,6 +464,7 @@ def build_map(
         zoomSnap=0.25,
         zoomDelta=0.5,
     )
+    _add_basemap(river_map)
     river_map.get_root().html.add_child(folium.Element(_flow_animation_css(flow_speed)))
     # Must be added to the map (not the root html) so it lands in the script
     # that st_folium hashes -- otherwise the speed control has no effect.
@@ -536,6 +543,37 @@ def build_map(
         ),
     )
     return river_map
+
+
+def _add_basemap(river_map: folium.Map) -> None:
+    """Lay down the basemap, and its place names when they ship separately.
+
+    ``max_native_zoom`` is the point of doing this by hand: Esri's raster
+    canvas has no tiles past z16, and without it Leaflet asks for z17+ and
+    renders blank squares instead of upscaling the last level it has.
+
+    The labels go on immediately, before the out-of-area mask and the river
+    layers, so the map keeps the stacking CARTO gave it for free when place
+    names were baked into the tile: names sit under the data, and names
+    outside the selected department fade with everything else.
+    """
+    folium.TileLayer(
+        BASEMAP_TILES,
+        attr=BASEMAP_ATTR,
+        name="Basemap",
+        max_native_zoom=BASEMAP_MAX_NATIVE_ZOOM,
+        control=False,
+    ).add_to(river_map)
+
+    if BASEMAP_LABELS_TILES:
+        folium.TileLayer(
+            BASEMAP_LABELS_TILES,
+            attr=BASEMAP_ATTR,
+            name="Place names",
+            max_native_zoom=BASEMAP_MAX_NATIVE_ZOOM,
+            overlay=True,
+            control=False,
+        ).add_to(river_map)
 
 
 def _add_river_labels(river_map: folium.Map, major: dict) -> None:

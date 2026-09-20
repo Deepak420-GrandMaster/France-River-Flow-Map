@@ -329,6 +329,36 @@ def test_static_rivers_use_canvas_and_animation_uses_svg():
     assert html.count("L.svg(") == 1
 
 
+def test_basemap_never_uses_a_keyless_carto_endpoint():
+    """CARTO stamps "API KEY REQUIRED" across every tile it serves without a key.
+
+    Nothing fails loudly when that happens: the tiles arrive with HTTP 200 and
+    Leaflet draws them, watermark and all, so the only place to catch it is the
+    URL. A keyed CARTO basemap is fine -- an unkeyed one is the bug.
+    """
+    import re
+
+    html = build_map(HERAULT, ONE_STATION).get_root().render()
+    carto_urls = re.findall(r"https://[^\"'\s]*carto[^\"'\s]*", html)
+    assert all("api_key=" in url for url in carto_urls), carto_urls
+
+
+def test_basemap_declares_its_native_zoom_ceiling():
+    """Past its last native level a tile layer must upscale, not go blank.
+
+    Esri's raster canvas has no tiles beyond z16 and the map allows z18, so
+    without maxNativeZoom Leaflet requests tiles that do not exist and the
+    basemap disappears underneath the rivers at close zoom.
+
+    Asserting on the value, not just the key: folium emits the option either
+    way, and ``"maxNativeZoom": null`` is exactly the broken case.
+    """
+    from src.config import BASEMAP_MAX_NATIVE_ZOOM
+
+    html = build_map(HERAULT, ONE_STATION).get_root().render()
+    assert f'"maxNativeZoom": {BASEMAP_MAX_NATIVE_ZOOM}' in html
+
+
 def test_outside_area_is_masked():
     import json
 
