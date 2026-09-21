@@ -27,6 +27,9 @@ BOUNDARIES_DIR = PROCESSED_DIR / "boundaries"
 RIVERS_DIR = PROCESSED_DIR / "rivers"
 DAMS_DIR = PROCESSED_DIR / "dams"
 REGISTRY_PATH = PROCESSED_DIR / "regions.json"
+#: Gauged commune names and the departments they sit in. Built offline by
+#: scripts/prepare_communes.py -- see that script for why it is not fetched.
+COMMUNES_PATH = PROCESSED_DIR / "communes.json"
 
 # BD TOPAGE 2024 national datasets (local-only, hundreds of MB).
 BD_TOPAGE_DIR = RAW_DIR / "BD_Topage_FXX_2024-shp"
@@ -185,6 +188,35 @@ NATIONAL_REGION = Region(code=NATIONAL_CODE, name=NATIONAL_NAME, bounds=NATIONAL
 
 
 @lru_cache(maxsize=1)
+def load_communes() -> dict[str, tuple[str, ...]]:
+    """Gauged commune names mapped to the departments they appear in.
+
+    Built by ``scripts/prepare_communes.py`` and committed, because the
+    national city filter has to offer every commune in France before a
+    department is chosen and Hub'Eau is far too slow to be asked at page load.
+
+    A missing or unreadable registry is not fatal: the national city filter
+    simply has nothing to offer, and every department view still builds its
+    own list from the stations it loaded.
+    """
+    if not COMMUNES_PATH.exists():
+        return {}
+    try:
+        payload = json.loads(COMMUNES_PATH.read_text(encoding="utf-8"))
+        entries = payload["communes"]
+    except (OSError, ValueError, KeyError):
+        return {}
+
+    communes: dict[str, tuple[str, ...]] = {}
+    for entry in entries:
+        name = str(entry.get("name") or "").strip()
+        departments = tuple(str(code) for code in entry.get("departments") or ())
+        if name and departments:
+            communes[name] = departments
+    return communes
+
+
+@lru_cache(maxsize=1)
 def load_regions() -> dict[str, Region]:
     """Every metropolitan department, keyed by ``dep{code}``.
 
@@ -227,6 +259,13 @@ FRESH_MINUTES = 90
 FRESHNESS_RECENT = "Recent"
 FRESHNESS_DELAYED = "Delayed"
 FRESHNESS_UNAVAILABLE = "Unavailable"
+
+#: Choosing cities on the national view loads the stations of whichever
+#: departments those communes sit in -- one Hub'Eau request per department,
+#: which is what the cost is actually measured in. Past this many departments
+#: the readings are skipped and the UI asks for a narrower choice instead of
+#: quietly issuing a dozen slow requests.
+NATIONAL_DEPARTMENT_LIMIT = 4
 
 # --------------------------------------------------------------------------
 # Cartography

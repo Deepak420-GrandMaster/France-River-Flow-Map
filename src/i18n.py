@@ -60,10 +60,12 @@ STRINGS: dict[str, dict[str, str]] = {
     "national.prompt": {
         "en": "Showing the main river network of metropolitan France. "
               "**Pick a department** in the sidebar to load live gauging stations "
-              "and discharge for that area.",
+              "and discharge for that area, or **filter by city** to load just "
+              "the stations of a commune.",
         "fr": "Réseau hydrographique principal de la France métropolitaine. "
               "**Choisissez un département** dans la barre latérale pour charger les "
-              "stations et les débits en direct de ce territoire.",
+              "stations et les débits en direct de ce territoire, ou **filtrez par "
+              "commune** pour ne charger que ses stations.",
     },
     "metric.rivers": {"en": "Rivers drawn", "fr": "Cours d'eau tracés"},
     "metric.length": {"en": "Network length", "fr": "Linéaire du réseau"},
@@ -113,6 +115,19 @@ STRINGS: dict[str, dict[str, str]] = {
               "Leave it empty to keep every city.",
         "fr": "Ne garde que les stations situées dans les communes choisies. "
               "Laisser vide pour toutes les communes.",
+    },
+    "side.cities_placeholder_national": {"en": "Pick a city", "fr": "Choisir une commune"},
+    "side.cities_help_national": {
+        "en": "Loads live readings for the gauging stations of the chosen communes, "
+              "without waiting for a department to be picked.",
+        "fr": "Charge les mesures en direct des stations des communes choisies, "
+              "sans avoir à choisir un département.",
+    },
+    "side.cities_too_many": {
+        "en": "Those cities span too many departments: readings load for up to "
+              "{limit}. Narrow the selection.",
+        "fr": "Ces communes couvrent trop de départements : les mesures se chargent "
+              "jusqu'à {limit}. Affinez la sélection.",
     },
     "side.cities_unavailable": {
         "en": "City filter unavailable: no stations loaded.",

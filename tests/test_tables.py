@@ -5,7 +5,15 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from src.utils.tables import TABLE_COLUMNS, apply_filters, build_display_table
+from src.utils.tables import (
+    TABLE_COLUMNS,
+    apply_filters,
+    build_display_table,
+    city_options,
+    departments_for_cities,
+    national_city_options,
+    stations_for_cities,
+)
 
 STATIONS = pd.DataFrame(
     {
@@ -135,3 +143,145 @@ def test_display_table_csv_round_trip_has_no_none_strings():
     csv = build_display_table(STATIONS).to_csv(index=False)
     assert "None" not in csv
     assert "+00:00" not in csv
+
+
+# --------------------------------------------------------------------------
+# City filter options
+# --------------------------------------------------------------------------
+def _cities(**columns) -> pd.DataFrame:
+    return pd.DataFrame(columns)
+
+
+def test_city_options_pair_the_raw_value_with_a_readable_label():
+    """The value must stay as published -- that is what apply_filters matches."""
+    options = city_options(_cities(
+        libelle_commune=["SAINT-GUILHEM-LE-DESERT", "AGDE"],
+        code_departement=["34", "34"],
+    ))
+    assert options == [("AGDE", "Agde"), ("SAINT-GUILHEM-LE-DESERT", "Saint-Guilhem-le-Desert")]
+
+
+def test_city_options_are_sorted_by_the_label_not_the_raw_value():
+    options = city_options(_cities(
+        libelle_commune=["BEZIERS", "AGDE", "MONTPELLIER"],
+        code_departement=["34", "34", "34"],
+    ))
+    assert [label for _, label in options] == ["Agde", "Beziers", "Montpellier"]
+
+
+def test_a_commune_name_shared_by_two_departments_is_disambiguated():
+    """Nationally, 27 of ~3,100 gauged commune names occur in more than one
+    department. Without the suffix those entries are indistinguishable."""
+    options = dict(city_options(_cities(
+        libelle_commune=["SAINT-MARTIN", "SAINT-MARTIN", "AGDE"],
+        code_departement=["17", "65", "34"],
+    )))
+    assert options["SAINT-MARTIN"] == "Saint-Martin (17, 65)"
+    # The unambiguous ones stay clean -- suffixing everything would be noise.
+    assert options["AGDE"] == "Agde"
+
+
+def test_city_options_are_clean_within_a_single_department():
+    options = city_options(_cities(
+        libelle_commune=["MONTPELLIER", "AGDE"], code_departement=["34", "34"],
+    ))
+    assert [label for _, label in options] == ["Agde", "Montpellier"]
+
+
+def test_city_options_ignore_blank_and_missing_names():
+    options = city_options(_cities(
+        libelle_commune=["AGDE", None, "   "], code_departement=["34", "34", "34"],
+    ))
+    assert options == [("AGDE", "Agde")]
+
+
+def test_city_options_survive_a_frame_without_the_column():
+    """Station snapshots predating the commune field have no such column."""
+    assert city_options(_cities(code_station=["Y1"])) == []
+    assert city_options(pd.DataFrame()) == []
+
+
+# --------------------------------------------------------------------------
+# National view: the committed commune registry, and what a choice costs
+# --------------------------------------------------------------------------
+#: Shape of src.config.load_communes(): raw name -> departments it occurs in.
+COMMUNES = {
+    "TOULOUSE": ("31",),
+    "AGDE": ("34",),
+    "MONTPELLIER": ("34",),
+    "LYON": ("69",),
+    "SAINT-MARTIN": ("17", "65"),
+}
+
+NATIONAL = pd.DataFrame(
+    {
+        "code_station": ["Y0", "Y1", "Y2", "Y3"],
+        "libelle_commune": ["TOULOUSE", "TOULOUSE", "AGDE", "MONTPELLIER"],
+        "code_departement": ["31", "31", "34", "34"],
+    }
+)
+
+
+def test_national_options_come_from_the_registry_not_from_stations():
+    """The national view has no stations loaded -- that is the point of the
+    registry -- so its list cannot be derived from a frame."""
+    options = dict(national_city_options(COMMUNES))
+    assert options["AGDE"] == "Agde"
+    assert options["TOULOUSE"] == "Toulouse"
+    # Same disambiguation rule as the department views.
+    assert options["SAINT-MARTIN"] == "Saint-Martin (17, 65)"
+
+
+def test_national_options_are_sorted_by_label():
+    labels = [label for _, label in national_city_options(COMMUNES)]
+    assert labels == sorted(labels)
+
+
+def test_a_missing_registry_offers_nothing_rather_than_failing():
+    assert national_city_options({}) == []
+
+
+def test_departments_for_cities_is_what_the_request_cost_is_measured_in():
+    """One Hub'Eau request per department, however many communes were chosen
+    inside it -- so two cities in one department cost one request."""
+    assert departments_for_cities(COMMUNES, ["AGDE", "MONTPELLIER"]) == ["34"]
+    assert departments_for_cities(COMMUNES, ["AGDE", "LYON"]) == ["34", "69"]
+
+
+def test_a_commune_in_two_departments_needs_both():
+    assert departments_for_cities(COMMUNES, ["SAINT-MARTIN"]) == ["17", "65"]
+
+
+def test_unknown_or_empty_cities_need_no_departments():
+    assert departments_for_cities(COMMUNES, []) == []
+    assert departments_for_cities(COMMUNES, ["ATLANTIS"]) == []
+
+
+def test_no_city_chosen_shows_nothing_nationally():
+    """Empty means "nothing yet", not "everything": the national view does not
+    load readings for every gauging station in France."""
+    result = stations_for_cities(NATIONAL, [])
+    assert result.empty
+    # The columns survive, so the caller needs no special case for empty.
+    assert list(result.columns) == list(NATIONAL.columns)
+
+
+def test_chosen_cities_select_their_stations():
+    result = stations_for_cities(NATIONAL, ["TOULOUSE", "AGDE"])
+    assert sorted(result["code_station"]) == ["Y0", "Y1", "Y2"]
+
+
+def test_only_the_chosen_communes_survive_a_loaded_department():
+    """A department is loaded whole, then narrowed: Montpellier must not drag
+    in the rest of the Hérault."""
+    result = stations_for_cities(NATIONAL, ["MONTPELLIER"])
+    assert list(result["code_station"]) == ["Y3"]
+
+
+def test_blank_entries_in_the_selection_are_ignored():
+    assert stations_for_cities(NATIONAL, ["", None]).empty
+
+
+def test_selection_is_skipped_when_the_commune_column_is_absent():
+    legacy = NATIONAL.drop(columns=["libelle_commune"])
+    assert stations_for_cities(legacy, ["TOULOUSE"]).empty

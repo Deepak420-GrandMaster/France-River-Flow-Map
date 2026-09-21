@@ -23,6 +23,7 @@ Verified API behaviour (probed 2026-08-20, see scripts/check_hubeau_api.py):
 from __future__ import annotations
 
 import logging
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
@@ -54,6 +55,9 @@ LITRES_PER_CUBIC_METRE = 1000.0
 #: not want to hammer a free public service.
 MAX_PAGE_SIZE = 1000
 MAX_CODES_PER_REQUEST = 50
+#: The stations endpoint rejects more than 50 values in ``code_departement``
+#: ("size must be between 0 and 50"), so a whole-country query is chunked.
+MAX_DEPARTMENTS_PER_REQUEST = 50
 #: (connect, read) seconds. Measured against the live service: when Hub'Eau is
 #: under load it completes the TCP and TLS handshake instantly but then takes
 #: **9-10 seconds** to produce a response, and sometimes drops the connection
@@ -191,6 +195,7 @@ STATION_FIELDS = (
     "latitude_station",
     "longitude_station",
     "libelle_commune",
+    "code_departement",
     "libelle_departement",
     "en_service",
 )
@@ -209,15 +214,34 @@ def get_active_stations(department_code: str = "34") -> pd.DataFrame:
     The frame is deduplicated on ``code_station`` and guaranteed to contain
     :data:`STATION_COLUMNS`, with usable latitude/longitude on every row.
     """
-    validate_department_code(department_code)
-    params = {
-        "code_departement": department_code,
-        "en_service": 1,
-        "format": "json",
-        "size": 500,
-        "fields": ",".join(STATION_FIELDS),
-    }
-    rows = _paginate(STATIONS_ENDPOINT, params)
+    return get_active_stations_for_departments([department_code])
+
+
+def get_active_stations_for_departments(department_codes: Sequence[str]) -> pd.DataFrame:
+    """Same as :func:`get_active_stations`, for several departments at once.
+
+    ``code_departement`` takes a comma-separated list but caps it at
+    :data:`MAX_DEPARTMENTS_PER_REQUEST`, so the whole country arrives in a
+    handful of requests rather than one per department. Every code is
+    validated before it reaches the URL.
+    """
+    codes = [code for code in dict.fromkeys(department_codes) if code]
+    for code in codes:
+        validate_department_code(code)
+    if not codes:
+        return empty_stations()
+
+    rows: list[dict] = []
+    for batch in _chunk(codes, MAX_DEPARTMENTS_PER_REQUEST):
+        params = {
+            "code_departement": ",".join(batch),
+            "en_service": 1,
+            "format": "json",
+            "size": 500,
+            "fields": ",".join(STATION_FIELDS),
+        }
+        rows += _paginate(STATIONS_ENDPOINT, params)
+
     if not rows:
         return empty_stations()
 

@@ -6,10 +6,12 @@ without starting a Streamlit runtime.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
+
 import pandas as pd
 
 from src.i18n import DEFAULT_LANGUAGE, t
-from src.utils.formatters import freshness_label
+from src.utils.formatters import format_commune, freshness_label
 
 #: Column order is fixed; only the headings are translated.
 TABLE_KEYS = [
@@ -21,6 +23,95 @@ TABLE_COLUMNS = [t(key) for key in TABLE_KEYS]
 
 def table_columns(lang: str = DEFAULT_LANGUAGE) -> list[str]:
     return [t(key, lang) for key in TABLE_KEYS]
+
+
+def _labelled(departments: dict[str, Sequence[str]]) -> list[tuple[str, str]]:
+    """Turn ``{raw name: departments}`` into sorted ``(value, label)`` pairs.
+
+    The value stays exactly as Hub'Eau published it, because that is what
+    :func:`apply_filters` matches on; only the label is cased for reading, and
+    sorting follows the label so the list reads alphabetically as shown.
+
+    A label carries its department codes only when the same commune name
+    occurs in more than one department -- 26 of the ~3,100 gauged communes in
+    France. Suffixing every label would be noise on a department view where
+    the department is already fixed; suffixing none would leave those 26
+    indistinguishable in the national list.
+    """
+    options = []
+    for name in sorted(departments, key=format_commune):
+        label = format_commune(name)
+        shared = sorted(departments[name])
+        if len(shared) > 1:
+            label = f"{label} ({', '.join(shared)})"
+        options.append((name, label))
+    return options
+
+
+def city_options(stations: pd.DataFrame) -> list[tuple[str, str]]:
+    """City filter options derived from a loaded station frame.
+
+    Used by the department views, where the stations on screen are exactly the
+    communes worth offering.
+    """
+    if stations is None or stations.empty or "libelle_commune" not in stations.columns:
+        return []
+
+    names = stations["libelle_commune"].fillna("").astype(str).str.strip()
+    keep = names != ""
+    if not keep.any():
+        return []
+
+    codes = (
+        stations["code_departement"].fillna("").astype(str).str.strip()
+        if "code_departement" in stations.columns
+        else pd.Series("", index=stations.index)
+    )
+    departments: dict[str, set[str]] = {name: set() for name in names[keep]}
+    for name, code in zip(names[keep], codes[keep]):
+        if code:
+            departments[name].add(code)
+    return _labelled(departments)
+
+
+def national_city_options(communes: dict[str, Sequence[str]]) -> list[tuple[str, str]]:
+    """City filter options for the national view, from the commune registry.
+
+    The national view has no stations loaded to derive a list from -- that is
+    the whole point of the registry -- so the options come from
+    ``src.config.load_communes`` instead.
+    """
+    return _labelled(communes or {})
+
+
+def departments_for_cities(
+    communes: dict[str, Sequence[str]], cities: Sequence[str]
+) -> list[str]:
+    """Departments that have to be loaded to cover ``cities``.
+
+    This is what the national view's cost is measured in: one Hub'Eau request
+    per department, regardless of how many communes inside it were chosen.
+    """
+    needed: set[str] = set()
+    for city in cities or []:
+        needed.update(communes.get(city, ()))
+    return sorted(needed)
+
+
+def stations_for_cities(stations: pd.DataFrame, cities: Sequence[str]) -> pd.DataFrame:
+    """The subset of ``stations`` sited in ``cities``.
+
+    Nothing chosen means nothing shown, not everything: on the national view a
+    city is what turns stations on at all. The frame keeps its columns either
+    way, so callers never special-case "empty".
+    """
+    if stations is None or stations.empty:
+        return stations
+
+    chosen = [city for city in (cities or []) if city]
+    if not chosen or "libelle_commune" not in stations.columns:
+        return stations.iloc[0:0]
+    return stations[stations["libelle_commune"].isin(chosen)]
 
 
 def apply_filters(stations: pd.DataFrame, controls: dict) -> pd.DataFrame:

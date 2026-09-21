@@ -210,3 +210,57 @@ def test_pagination_follows_next_links():
     with patch.object(hubeau, "_get_json", side_effect=pages):
         rows = hubeau._paginate("https://example.test", {})
     assert len(rows) == 2
+
+
+# --------------------------------------------------------------------------
+# Whole-country station list -- the department list has a hard cap
+# --------------------------------------------------------------------------
+def _station_row(code, commune, department):
+    return {
+        "code_station": code, "libelle_station": f"Station {code}",
+        "libelle_cours_eau": "Le Test", "latitude_station": 43.9,
+        "longitude_station": 3.7, "libelle_commune": commune,
+        "code_departement": department, "libelle_departement": "TEST",
+        "en_service": 1,
+    }
+
+
+def test_national_station_list_is_chunked_under_the_department_cap():
+    """Hub'Eau rejects more than 50 values in code_departement with a 400.
+
+    That is a silent trap: one request for 96 departments looks reasonable and
+    fails outright, so the request must be split before it is sent.
+    """
+    codes = [f"{n:02d}" for n in range(1, 96)]
+    sent = []
+
+    def fake_get(url, params=None, timeout=None):
+        sent.append(params["code_departement"].split(","))
+        return FakeResponse(200, {"data": [_station_row("A1", "AGDE", "34")]})
+
+    with patch.object(hubeau._SESSION, "get", side_effect=fake_get):
+        hubeau.get_active_stations_for_departments(codes)
+
+    assert len(sent) > 1, "95 departments must not go out as a single request"
+    assert all(len(batch) <= hubeau.MAX_DEPARTMENTS_PER_REQUEST for batch in sent)
+    # Every department asked for is asked for exactly once.
+    assert sorted(code for batch in sent for code in batch) == sorted(codes)
+
+
+def test_national_station_list_rejects_a_bad_department_code():
+    """Codes reach the URL, so they are validated before the request, not after."""
+    with pytest.raises(ValueError):
+        hubeau.get_active_stations_for_departments(["34", "../etc/passwd"])
+
+
+def test_national_station_list_deduplicates_and_keeps_the_commune():
+    rows = [_station_row("A1", "AGDE", "34"), _station_row("A1", "AGDE", "34")]
+    with patch.object(hubeau._SESSION, "get", return_value=FakeResponse(200, {"data": rows})):
+        frame = hubeau.get_active_stations_for_departments(["34"])
+    assert len(frame) == 1
+    assert frame.iloc[0]["libelle_commune"] == "AGDE"
+
+
+def test_no_departments_means_no_request():
+    with patch.object(hubeau._SESSION, "get", side_effect=AssertionError("must not call")):
+        assert hubeau.get_active_stations_for_departments([]).empty

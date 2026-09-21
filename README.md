@@ -67,6 +67,8 @@ python scripts/capture_screenshots.py
 - Filtered, sortable station table with CSV download, plus a top-10 discharge chart.
 - Search across station name, river name and station code.
 - Filter by city (commune) — multi-select, resets when the department changes.
+  Works on the national view too: picking a city there loads just that
+  commune's stations, without choosing a department first.
 
 **Interface**
 - **English / French** switch in the top right, covering every string in the UI
@@ -190,12 +192,14 @@ france-river-flow-map/
 │   ├── prepare_boundaries.py   # Department registry + outlines (all 96)
 │   ├── prepare_rivers.py       # BD TOPAGE -> per-department river layers
 │   ├── prepare_dams.py         # PlanEau -> dams & reservoirs per department
+│   ├── prepare_communes.py     # Gauged commune registry for the city filter
 │   └── check_hubeau_api.py     # Manual API diagnostic
 ├── tests/                      # pytest, no network access
 ├── data/
 │   ├── raw/                    # Source downloads — gitignored, local only
 │   └── processed/              # Small committed layers used at runtime
 │       ├── regions.json        #   registry of all 96 departments
+│       ├── communes.json       #   gauged communes -> their departments
 │       ├── boundaries/         #   dep{code}.geojson
 │       ├── rivers/             #   dep{code}_overview.geojson
 │       └── dams/               #   dep{code}.geojson
@@ -285,6 +289,14 @@ python scripts/prepare_rivers.py --all --force
 
 ```bash
 python scripts/prepare_dams.py --all --force
+```
+
+The commune registry behind the national city filter. It needs no BD TOPAGE
+download -- only Hub'Eau -- and is worth re-running occasionally so newly
+gauged communes appear in the dropdown:
+
+```bash
+python scripts/prepare_communes.py --force
 ```
 
 A single department, including its richer detail layer:

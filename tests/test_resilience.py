@@ -329,6 +329,31 @@ def test_static_rivers_use_canvas_and_animation_uses_svg():
     assert html.count("L.svg(") == 1
 
 
+def test_the_commune_registry_is_present_and_usable():
+    """The national city filter is backed by a committed file, not a fetch.
+
+    If it goes missing the filter silently has nothing to offer, so its
+    presence is asserted rather than assumed.
+    """
+    from src.config import load_communes
+
+    communes = load_communes()
+    assert len(communes) > 1000, "commune registry looks empty or truncated"
+    assert all(departments for departments in communes.values()), "commune with no department"
+    # Shouted, exactly as Hub'Eau publishes it -- the casing is display-only.
+    assert all(name == name.upper() for name in list(communes)[:50])
+
+
+def test_every_commune_department_is_a_real_region():
+    """A registry entry pointing at a department the app does not offer would
+    produce a city that loads nothing when chosen."""
+    from src.config import load_communes, load_regions
+
+    known = {region.code for region in load_regions().values() if not region.is_national}
+    referenced = {code for codes in load_communes().values() for code in codes}
+    assert referenced <= known, f"unknown departments: {sorted(referenced - known)}"
+
+
 def test_basemap_never_uses_a_keyless_carto_endpoint():
     """CARTO stamps "API KEY REQUIRED" across every tile it serves without a key.
 

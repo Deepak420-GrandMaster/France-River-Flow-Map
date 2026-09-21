@@ -34,9 +34,11 @@ from src.config import (
     LOD_DETAIL,
     LOD_HIDDEN,
     LOD_OVERVIEW,
+    NATIONAL_DEPARTMENT_LIMIT,
     RIVER_BASE_COLOR,
     RIVER_FLOW_COLOR,
     flow_color,
+    load_communes,
     load_regions,
     normal_ratio_color,
 )
@@ -60,7 +62,6 @@ from src.services.hubeau import empty_stations as hubeau_empty
 from src.utils import theme
 from src.utils.formatters import (
     add_freshness_column,
-    format_commune,
     format_coordinates,
     format_flow,
     format_litres,
@@ -72,9 +73,29 @@ from src.utils.map_helpers import (
     find_clicked_station,
     split_rivers,
 )
-from src.utils.tables import apply_filters, build_display_table
+from src.utils.tables import (
+    apply_filters,
+    build_display_table,
+    city_options,
+    departments_for_cities,
+    national_city_options,
+    stations_for_cities,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+
+def city_filter_key(region_key: str) -> str:
+    """Session-state key for the city multiselect.
+
+    Keyed on the region because the commune list changes completely between
+    departments: a selection carried across would match nothing and silently
+    empty the map. The key is shared rather than inlined because the main flow
+    reads the selection out of session_state *before* the widget is drawn --
+    on the national view, what is selected decides which stations get loaded
+    at all, and that decision happens earlier in the script than the sidebar.
+    """
+    return f"ctl_cities_{region_key}"
+
 
 HISTORY_WINDOW_HOURS = {"chart.24h": 24, "chart.7d": 168}
 TOP_N_STATIONS = 10
@@ -276,28 +297,32 @@ def render_live_sidebar_parts(controls: dict, stations: pd.DataFrame, fetched_at
         t("side.updated", lang, age=relative_age(fetched_at, lang), stamp=utc_label(fetched_at))
     )
 
-    communes = (
-        stations["libelle_commune"].dropna().astype(str).str.strip()
-        if "libelle_commune" in stations
-        else pd.Series(dtype=str)
-    )
-    # Sorted by the displayed spelling rather than the shouted source value,
-    # so the list reads alphabetically as the user actually sees it.
-    city_options = sorted({name for name in communes if name}, key=format_commune)
+    # On the national view the options come from the committed commune
+    # registry, prepared by the main flow -- nothing is loaded there until a
+    # city is picked, and a filter can only offer what it can see.
+    options = controls.get("_city_options")
+    if options is None:
+        options = city_options(stations)
+    national = controls["region"].is_national
     with controls["_city_slot"].container():
-        if city_options:
+        if options:
+            labels = dict(options)
             controls["cities"] = st.multiselect(
                 t("side.cities", lang),
-                options=city_options,
-                format_func=format_commune,
-                placeholder=t("side.cities_placeholder", lang),
-                help=t("side.cities_help", lang),
+                options=[value for value, _ in options],
+                format_func=lambda value: labels.get(value, value),
+                placeholder=t(
+                    "side.cities_placeholder_national" if national
+                    else "side.cities_placeholder", lang
+                ),
+                help=t("side.cities_help_national" if national else "side.cities_help", lang),
                 label_visibility="collapsed",
-                # Keyed on the department: the commune list changes completely
-                # from one to the next, and a selection carried over would
-                # match nothing and silently empty the map.
-                key=f"ctl_cities_{controls['region_key']}",
+                key=city_filter_key(controls["region_key"]),
             )
+            if controls.get("_city_over_limit"):
+                st.caption(
+                    t("side.cities_too_many", lang, limit=NATIONAL_DEPARTMENT_LIMIT)
+                )
         else:
             st.caption(t("side.cities_unavailable", lang))
 
@@ -589,16 +614,45 @@ def main() -> None:
     with hero_slot.container():
         theme.hero(
             t("app.title", lang), t("hero.subtitle", lang),
+            # Same scope pill the finished hero uses. The national region's
+            # code is the sentinel "FR", so the department wording would read
+            # "dept. FR" -- invisible before, when the national view loaded
+            # nothing, but on screen for as long as its station list takes.
             [("", t("hero.connecting", lang)),
-             ("", t("hero.dept", lang, name=region.name, code=region.code))],
+             ("", t("national.name", lang) if region.is_national
+                  else t("hero.dept", lang, name=region.name, code=region.code))],
         )
 
     if region.is_national:
-        # No per-station fetch: live discharge is a per-department query, and
-        # doing it for every gauging station in France would be dozens of
-        # calls against a free public API on every page load.
+        # Still no blanket per-station fetch: live discharge is a
+        # per-department query, and doing it for every gauging station in
+        # France would be dozens of calls against a free public API on every
+        # page load. The city filter's options come from the committed commune
+        # registry instead, which costs milliseconds -- see
+        # scripts/prepare_communes.py for why it is not fetched here.
+        communes = load_communes()
+        controls["_city_options"] = national_city_options(communes)
+
+        # The multiselect is drawn later in the script, so its value is read
+        # straight from session_state: the rerun that follows a selection has
+        # to know about it here, before deciding what to load.
+        chosen = [
+            city for city in st.session_state.get(city_filter_key(controls["region_key"]), [])
+            if city
+        ]
+        needed = departments_for_cities(communes, chosen)
+        controls["_city_over_limit"] = len(needed) > NATIONAL_DEPARTMENT_LIMIT
+
         stations = hubeau_empty()
-        codes: tuple[str, ...] = ()
+        if needed and not controls["_city_over_limit"]:
+            # One request per department, then narrowed to the chosen communes.
+            with st.spinner(t("msg.loading", lang)):
+                loaded = [load_stations(code) for code in needed]
+                loaded = [frame for frame in loaded if not frame.empty]
+                if loaded:
+                    stations = stations_for_cities(pd.concat(loaded, ignore_index=True), chosen)
+
+        codes = tuple(stations["code_station"].tolist()) if not stations.empty else ()
         flows = load_latest_flows(codes, "")
     else:
         with st.spinner(t("msg.loading", lang)):
@@ -633,14 +687,14 @@ def main() -> None:
         else t("hero.dept", lang, name=region.name, code=region.code)
     )
     pills = [(state, pill), ("", scope_pill)]
-    if not region.is_national:
+    if not region.is_national or not stations.empty:
         pills.append(("", t("hero.stations", lang, count=f"{len(stations):,}")))
     with hero_slot.container():
         theme.hero(t("app.title", lang), t("hero.subtitle", lang), pills)
 
-    if region.is_national:
+    if region.is_national and stations.empty:
         st.info(t("national.prompt", lang))
-    elif stations.empty:
+    elif not region.is_national and stations.empty:
         st.error(t("msg.api_down", lang))
     elif flows.from_cache:
         st.warning(
@@ -653,7 +707,7 @@ def main() -> None:
     filtered = apply_filters(table, controls)
     rivers = load_rivers(controls["region_key"], controls["detail"])
 
-    if region.is_national:
+    if region.is_national and filtered.empty:
         render_national_metrics(rivers, lang)
     else:
         render_metrics(filtered, lang)
